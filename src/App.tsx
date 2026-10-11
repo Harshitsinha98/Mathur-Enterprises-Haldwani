@@ -1,7 +1,11 @@
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Link, Route, Routes, useLocation } from "react-router-dom";
-import { Footer, ScrollProgress, WhatsAppFab } from "./components/Chrome";
+import { ActionDock, FloatingActions } from "./components/ActionDock";
+import { ActionsProvider } from "./components/ActionsProvider";
+import { ChatPanel } from "./components/ChatPanel";
+import { Footer, ScrollProgress } from "./components/Chrome";
+import { EnquirySheet } from "./components/EnquirySheet";
 import { Navbar } from "./components/Navbar";
 import { LangProvider, useLang } from "./lib/i18n";
 import Home from "./pages/Home";
@@ -82,11 +86,18 @@ export default function App() {
     <LangProvider>
       <MotionConfig reducedMotion="user">
         <BrowserRouter>
-          <ScrollProgress />
-          <Navbar />
-          <AnimatedRoutes />
-          <Footer />
-          <WhatsAppFab />
+          <ActionsProvider>
+            <ScrollProgress />
+            <Navbar />
+            <AnimatedRoutes />
+            <Footer />
+            {/* room for the mobile dock */}
+            <div aria-hidden className="h-[calc(88px+env(safe-area-inset-bottom))] bg-ink-950 md:hidden" />
+            <FloatingActions />
+            <ActionDock />
+            <ChatPanel />
+            <EnquirySheet />
+          </ActionsProvider>
         </BrowserRouter>
       </MotionConfig>
     </LangProvider>

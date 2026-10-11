@@ -3,16 +3,8 @@ import { ArrowRight, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { solar, ui } from "../data/content";
 import { useLang } from "../lib/i18n";
+import { centralSubsidy, recommendKw, UNITS_PER_KW_MONTH } from "../lib/solar";
 import { waLink } from "../lib/utils";
-
-const UNITS_PER_KW_MONTH = 120; // ~4 units/day/kW in the Terai & Kumaon foothills
-
-function centralSubsidy(kw: number) {
-  if (kw <= 0) return 0;
-  if (kw <= 2) return Math.round(kw * 30000);
-  if (kw < 3) return Math.round(60000 + (kw - 2) * 18000);
-  return 78000;
-}
 
 function AnimatedRupee({ value }: { value: number }) {
   const [v, setV] = useState(value);
@@ -54,7 +46,7 @@ export function SubsidyCalculator() {
   const [units, setUnits] = useState(300);
   const [rate, setRate] = useState(6);
 
-  const kw = Math.max(1, Math.min(10, Math.round((units / UNITS_PER_KW_MONTH) * 2) / 2));
+  const kw = recommendKw(units);
   const subsidy = centralSubsidy(kw);
   const yearly = Math.round(Math.min(units, kw * UNITS_PER_KW_MONTH) * rate * 12);
 
