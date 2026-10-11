@@ -1,126 +1,23 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ArrowRight, Award, BadgeCheck, Check, MapPin, MapPinned, ShieldCheck, Sun, Wrench, Zap } from "lucide-react";
-import { useRef } from "react";
+import { ArrowRight, Award, BadgeCheck, Check, MapPin, MapPinned, ShieldCheck, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Img } from "../components/Img";
-import { LogoMark } from "../components/Logo";
-import { Counter, Reveal, SectionHeading, SpotlightCard, rise, stagger } from "../components/motion";
-import { Particles } from "../components/Particles";
-import { BrandMarquee, CtaBand, ExploreLink, GhostButton, HorizontalScroller, PrimaryButton, TeamCard, VerticalCards, accent } from "../components/sections";
-import { awards, branches, brand, home, installations, moments, team, ui, verticals } from "../data/content";
+import { Hero } from "../components/Hero";
+import { Counter, Reveal, SectionHeading, SpotlightCard } from "../components/motion";
+import { BrandMarquee, CtaBand, ExploreLink, GhostButton, HorizontalScroller, PrimaryButton, TeamCard, VerticalCards } from "../components/sections";
+import { awards, branches, brand, home, installations, moments, team, ui } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { cn, waLink } from "../lib/utils";
 
 const icons = { badge: BadgeCheck, map: MapPinned, wrench: Wrench, award: Award, shield: ShieldCheck, geo: MapPin } as const;
 
-function Hero() {
-  const { t, lang } = useLang();
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const textO = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const sunY = useTransform(scrollYProgress, [0, 1], [0, 160]);
-
+function StatsStrip() {
+  const { t } = useLang();
   return (
-    <section ref={ref} className="noise relative isolate flex min-h-[100svh] flex-col items-center justify-center overflow-hidden pb-10 pt-32">
-      {/* sky */}
-      <div className="absolute inset-0 -z-30 bg-[radial-gradient(120%_80%_at_50%_110%,#1d47a8_0%,#0a1e52_35%,#06122e_60%,#030a1c_100%)]" />
-      <div className="absolute inset-0 -z-20 grid-bg [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
-      <Particles />
-
-      {/* rising sun */}
-      <motion.div style={{ y: sunY }} className="pointer-events-none absolute bottom-[-46vmin] left-1/2 -z-10 -translate-x-1/2">
-        <motion.div initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }} className="relative">
-          <div className="absolute left-1/2 top-1/2 h-[150vmin] w-[150vmin] -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full bg-[repeating-conic-gradient(from_0deg,rgba(255,194,26,0.10)_0deg_4deg,transparent_4deg_15deg)] [mask-image:radial-gradient(circle,black_25%,transparent_68%)]" />
-          <div className="h-[92vmin] w-[92vmin] rounded-full bg-[radial-gradient(circle_at_50%_40%,#fff3c4_0%,#ffc21a_28%,#f28c00_55%,rgba(242,140,0,0)_72%)] opacity-80 blur-[2px]" />
-          <div className="absolute inset-0 rounded-full bg-sun-400/30 blur-[90px]" />
-        </motion.div>
-      </motion.div>
-      {/* horizon fade */}
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-ink-950 to-transparent" />
-
-      {/* floating photo cards */}
-      <motion.div
-        initial={{ opacity: 0, x: -60, rotate: -14 }}
-        animate={{ opacity: 1, x: 0, rotate: -8 }}
-        transition={{ delay: 1, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-[4%] top-[26%] hidden w-52 xl:block"
-      >
-        <div className="animate-float overflow-hidden rounded-2xl border border-white/15 shadow-2xl shadow-black/50">
-          <Img id="solar-haldwani-3" alt="" className="aspect-[4/5] w-full object-cover" sizes="220px" />
-        </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 60, rotate: 14 }}
-        animate={{ opacity: 1, x: 0, rotate: 7 }}
-        transition={{ delay: 1.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute right-[4%] top-[30%] hidden w-56 xl:block"
-      >
-        <div className="animate-float overflow-hidden rounded-2xl border border-white/15 shadow-2xl shadow-black/50 [animation-delay:1.5s]">
-          <Img id="ev-expo-rickshaw" alt="" className="aspect-[4/5] w-full object-cover" sizes="220px" />
-        </div>
-      </motion.div>
-
-      <motion.div style={{ y: textY, opacity: textO }} className="container-x relative flex flex-col items-center text-center">
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="mb-6 rounded-2xl bg-white px-3 py-2 shadow-[0_0_60px_-10px_rgba(255,194,26,0.8)]">
-          <LogoMark animated className="h-12 sm:h-14" />
-        </motion.div>
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-white/75"
-        >
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-leaf-400" />
-          {t(home.eyebrow)}
-        </motion.span>
-
-        <h1 key={lang} className="mt-7 font-display text-[13vw] font-bold leading-[0.95] tracking-tighter sm:text-7xl lg:text-[6.5rem]">
-          {home.title.map((line, i) => (
-            <span key={line.en} className="block overflow-hidden pb-[0.08em]">
-              <motion.span
-                className={cn("block", i === 1 && "text-gradient-sun", i === 2 && "font-medium text-white/55")}
-                initial={{ y: "105%" }}
-                animate={{ y: 0 }}
-                transition={{ delay: 0.3 + i * 0.14, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {t(line)}
-              </motion.span>
-            </span>
-          ))}
-        </h1>
-
-        <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.8 }} className="mt-7 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
-          {t(home.sub)}
-        </motion.p>
-
-        <motion.div variants={stagger} initial="hidden" animate="show" transition={{ delayChildren: 1.1 }} className="mt-9 flex flex-wrap justify-center gap-3">
-          {verticals.map((v) => (
-            <motion.div key={v.key} variants={rise}>
-              <Link
-                to={v.path}
-                className="glass group flex items-center gap-2.5 rounded-full py-2 pl-2 pr-5 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-white/10"
-              >
-                <span className={cn("grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br text-[11px] font-black text-ink-950", accent[v.key].grad)}>
-                  {v.key === "solar" ? <Sun className="h-4 w-4" /> : v.key === "rajhans" ? "R" : <Zap className="h-4 w-4" />}
-                </span>
-                {t(v.name)}
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-
-      {/* stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.4, duration: 0.9 }}
-        className="container-x relative mt-14 sm:mt-16"
-      >
-        <div className="glass mx-auto grid max-w-4xl grid-cols-2 divide-white/10 rounded-3xl sm:grid-cols-4 sm:divide-x">
-          {home.stats.map((s) => (
-            <div key={s.label.en} className="px-4 py-5 text-center">
+    <section className="container-x pt-16 sm:pt-20">
+      <Reveal>
+        <div className="glass mx-auto grid max-w-5xl grid-cols-2 overflow-hidden rounded-3xl sm:grid-cols-4">
+          {home.stats.map((s, i) => (
+            <div key={s.label.en} className={cn("relative px-4 py-6 text-center", i % 2 === 1 && "border-l border-white/10", i > 1 && "border-t border-white/10 sm:border-t-0", i === 2 && "sm:border-l")}>
               <div className="font-display text-3xl font-bold text-white sm:text-4xl">
                 <Counter to={s.value} suffix={s.suffix} plain={s.plain} />
               </div>
@@ -128,11 +25,7 @@ function Hero() {
             </div>
           ))}
         </div>
-      </motion.div>
-
-      <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 2 }} className="mt-8 text-white/40">
-        <ArrowDown className="h-5 w-5" />
-      </motion.div>
+      </Reveal>
     </section>
   );
 }
@@ -340,6 +233,7 @@ export default function Home() {
     <>
       <Hero />
       <BrandMarquee />
+      <StatsStrip />
       <section className="container-x py-24 sm:py-32">
         <SectionHeading eyebrow={t(home.verticalsEyebrow)} title={t(home.verticalsTitle)} />
         <div className="mt-14">

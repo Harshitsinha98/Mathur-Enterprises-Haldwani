@@ -131,3 +131,8 @@ html[lang="hi"] .font-display {
 html[lang="hi"] [class*="tracking-"]:not(.font-logo) {
   letter-spacing: 0 !important;
 }
+
+@keyframes dockshine {
+  0%, 55% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

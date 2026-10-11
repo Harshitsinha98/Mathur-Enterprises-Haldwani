@@ -33,6 +33,17 @@ compressed WebP files (640px + 1600px) in `public/img` (~15 MB in total). It als
 ## Content
 All text, in both English and Hindi, lives in `src/data/content.ts`: team, branches, products, installations and awards.
 
+## Quick actions & AI assistant
+- **Mobile:** a bottom dock with Call, WhatsApp, AI (Mathur Mitra) and a page-aware button that opens the Quick Enquiry builder. The button reads "Free site survey" on Solar, "Book test ride" on Rajhans and "Get a quote" on Okaya.
+- **Desktop:** AI and WhatsApp bubbles in the bottom-right corner.
+- **Quick Enquiry:** 3 taps (business, need and when, town). It then opens WhatsApp with a structured message.
+- **Mathur Mitra (AI):** `api/chat.ts` is a Vercel Function. Set **one** of these in Vercel → Project → Settings → Environment Variables, then redeploy:
+  - `GEMINI_API_KEY` (optional `GEMINI_MODEL`, default `gemini-3.8-flash`)
+  - `OPENAI_API_KEY` (optional `OPENAI_MODEL`, default `gpt-5.4-mini`)
+
+  If no key is set, or the provider fails, the chat automatically uses the built-in rule-based assistant in `src/lib/assistant.ts`, so it never breaks. The API key stays on the server.
+  Keep `KNOWLEDGE` in `api/chat.ts` in sync with `src/data/content.ts` when business details change.
+
 ## Deploy (Vercel)
 Import the repo in Vercel. The framework is auto-detected as **Vite**, the build command is `npm run build` and the output folder is `dist`.
 `vercel.json` already contains the SPA rewrite and long-term caching for images.

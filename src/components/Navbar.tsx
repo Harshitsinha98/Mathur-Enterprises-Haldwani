@@ -2,10 +2,12 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { ticker } from "../data/assist";
 import { ui } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { cn, telLink } from "../lib/utils";
 import { Logo } from "./Logo";
+import { Marquee } from "./motion";
 
 const links = [
   { to: "/", label: ui.nav.home },
@@ -36,7 +38,7 @@ export function LangToggle({ className }: { className?: string }) {
 }
 
 export function Navbar() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -49,7 +51,29 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:pt-4">
+    <header className="fixed inset-x-0 top-0 z-50">
+      <motion.div
+        initial={false}
+        animate={{ height: scrolled || open ? 0 : "auto", opacity: scrolled || open ? 0 : 1 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="overflow-hidden border-b border-white/5 bg-ink-950/80 backdrop-blur"
+      >
+        <div className="flex items-center">
+          <span className="z-10 flex shrink-0 items-center gap-1.5 bg-ink-950 py-1.5 pl-3 pr-2 text-[10px] font-bold uppercase tracking-[0.18em] text-leaf-400 sm:pl-5">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-leaf-400" />
+            {lang === "hi" ? "अपडेट" : "Live"}
+          </span>
+          <Marquee duration={38} className="flex-1 py-1.5">
+            {ticker.map((x) => (
+              <span key={x.en} className="mx-6 flex items-center gap-6 whitespace-nowrap text-[11px] font-medium tracking-wide text-white/65 sm:text-xs">
+                {t(x)}
+                <span className="h-1 w-1 rounded-full bg-sun-400/70" />
+              </span>
+            ))}
+          </Marquee>
+        </div>
+      </motion.div>
+      <div className="flex justify-center px-3 pt-3 sm:pt-4">
       <motion.nav
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -103,6 +127,7 @@ export function Navbar() {
           </button>
         </div>
       </motion.nav>
+      </div>
 
       <AnimatePresence>
         {open && (
