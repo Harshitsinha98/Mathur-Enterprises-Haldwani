@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Inter", ui-sans-serif, sans-serif;
+  --font-logo: "Montserrat", "Sora", sans-serif;
+  --font-hindi: "Mukta", "Inter", sans-serif;
+
+  --color-ink-950: #030a1c;
+  --color-ink-900: #06122e;
+  --color-ink-800: #0a1e52;
+  --color-ink-700: #12307a;
+  --color-ink-600: #1d47a8;
+
+  --color-sun-300: #ffe08a;
+  --color-sun-400: #ffc21a;
+  --color-sun-500: #f5a300;
+  --color-sun-600: #e07b00;
+
+  --color-leaf-300: #8ff0ab;
+  --color-leaf-400: #4fd97a;
+  --color-leaf-500: #22a04b;
+  --color-leaf-600: #17803a;
+
+  --color-raj-400: #ff5a5f;
+  --color-raj-500: #e11d2e;
+
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --animate-spin-slow: spin 60s linear infinite;
+  --animate-shine: shine 3.5s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes shine {
+    0% { background-position: 200% 0; }
+    60%, 100% { background-position: -200% 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-ink-950 text-white font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-sun-400);
+    color: var(--color-ink-950);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-sun-400);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+  .text-gradient-sun {
+    @apply bg-gradient-to-r from-sun-300 via-sun-400 to-sun-600 bg-clip-text text-transparent;
+  }
+  .text-gradient-leaf {
+    @apply bg-gradient-to-r from-leaf-300 to-leaf-500 bg-clip-text text-transparent;
+  }
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-sun-300 via-sun-400 to-leaf-400 bg-clip-text text-transparent;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .shine-text {
+    background: linear-gradient(110deg, #fff 35%, var(--color-sun-300) 50%, #fff 65%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    @apply animate-shine;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hindi mode: unlayered so it wins over Tailwind utilities.
+   Sora/Inter have no Devanagari glyphs, so swap to Mukta everywhere. */
+html[lang="hi"] body,
+html[lang="hi"] .font-display,
+html[lang="hi"] .font-sans {
+  font-family: "Mukta", "Inter", sans-serif !important;
+}
+html[lang="hi"] .font-display {
+  font-weight: 800;
+  letter-spacing: 0 !important;
+  line-height: 1.2;
+}
+/* letter-spacing breaks Devanagari conjuncts */
+html[lang="hi"] [class*="tracking-"]:not(.font-logo) {
+  letter-spacing: 0 !important;
+}
