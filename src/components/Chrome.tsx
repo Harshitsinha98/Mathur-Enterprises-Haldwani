@@ -35,6 +35,7 @@ export function Footer() {
       <div className="container-x relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Logo />
+          <PoweredBy className="mt-3" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">{t(ui.footer.tagline)}</p>
           <p className="mt-4 font-display text-lg italic text-sun-300">“{t(brand.tagline)}”</p>
         </div>
@@ -91,16 +92,13 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/5">
-        <div className="container-x flex flex-col items-center gap-4 py-6 text-xs text-white/40">
-          <div className="flex w-full flex-col items-center justify-between gap-2 sm:flex-row">
-            <span className="text-center sm:text-left">
-              © {new Date().getFullYear()} Mathur Enterprises, Haldwani. {t(ui.footer.rights)}
-              {business.gstin && <span className="block sm:ml-2 sm:inline">GSTIN: {business.gstin}</span>}
-              {business.udyam && <span className="block sm:ml-2 sm:inline">Udyam: {business.udyam}</span>}
-            </span>
-            <span className="hidden gap-3 sm:flex">{brand.pillars.map((p) => <span key={p.en}>{t(p)}</span>)}</span>
-          </div>
-          <PoweredBy />
+        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/40 sm:flex-row">
+          <span className="text-center sm:text-left">
+            © {new Date().getFullYear()} Mathur Enterprises, Haldwani. {t(ui.footer.rights)}
+            {business.gstin && <span className="block sm:ml-2 sm:inline">GSTIN: {business.gstin}</span>}
+            {business.udyam && <span className="block sm:ml-2 sm:inline">Udyam: {business.udyam}</span>}
+          </span>
+          <span className="hidden gap-3 sm:flex">{brand.pillars.map((p) => <span key={p.en}>{t(p)}</span>)}</span>
         </div>
       </div>
     </footer>

@@ -34,6 +34,7 @@ for (const [id, rel] of Object.entries(MAP)) {
   const outputs = Object.keys(SIZES).map((s) => path.join(OUT, `${id}-${s}.webp`));
   const exists = (await Promise.all(outputs.map((o) => fs.access(o).then(() => true, () => false)))).every(Boolean);
   if (exists && manifest[id] === hash && dims[id]) {
+    dims[id] = [dims[id][0], dims[id][1], hash.slice(0, 8)]; // version used for cache-busting URLs
     kept++;
     continue;
   }
@@ -43,7 +44,7 @@ for (const [id, rel] of Object.entries(MAP)) {
       .resize({ width, height: width, fit: "inside", withoutEnlargement: true })
       .webp({ quality: suffix === "sm" ? 68 : 74, effort: 5 })
       .toFile(path.join(OUT, `${id}-${suffix}.webp`)); // EXIF/GPS metadata is stripped
-    if (suffix === "lg") dims[id] = [info.width, info.height];
+    if (suffix === "lg") dims[id] = [info.width, info.height, hash.slice(0, 8)];
   }
   manifest[id] = hash;
   made++;
