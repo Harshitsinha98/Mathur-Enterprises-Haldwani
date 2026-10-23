@@ -2,12 +2,19 @@ import { useState, type ImgHTMLAttributes } from "react";
 import sizes from "../data/image-sizes.json";
 import { cn } from "../lib/utils";
 
-const dims = sizes as unknown as Record<string, [number, number]>;
+const dims = sizes as unknown as Record<string, [number, number, string?]>;
 
 /** True when the photo exists in the optimized set (photos.json → npm run images). */
 export const hasImg = (id?: string) => !!id && id in dims;
 
-export const imgSrc = (id: string, size: "sm" | "lg" = "lg") => `/img/${id}-${size}.webp`;
+/**
+ * `?v=` is a hash of the source photo. When a photo is replaced the URL changes,
+ * so browsers fetch the new one instead of a cached old picture.
+ */
+export const imgSrc = (id: string, size: "sm" | "lg" = "lg") => {
+  const v = dims[id]?.[2];
+  return `/img/${id}-${size}.webp${v ? `?v=${v}` : ""}`;
+};
 export const imgRatio = (id: string) => {
   const d = dims[id];
   return d ? d[0] / d[1] : 4 / 3;

@@ -88,7 +88,7 @@ export function Navbar() {
           <NavLink to="/" aria-label="Mathur Enterprises home">
             <Logo />
           </NavLink>
-          <PoweredBy className="mt-1 hidden pl-[3.1rem] !text-[0.5rem] !tracking-[0.2em] sm:inline-flex" />
+          <PoweredBy className="mt-1 pl-[3.1rem] text-[0.48rem] tracking-[0.18em] sm:text-[0.5rem] sm:tracking-[0.2em]" />
         </div>
 
         <ul className="hidden items-center gap-1 lg:flex">
