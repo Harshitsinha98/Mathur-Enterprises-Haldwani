@@ -7,6 +7,7 @@ import { ui } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { cn, telLink } from "../lib/utils";
 import { Logo } from "./Logo";
+import { PoweredBy } from "./PoweredBy";
 import { Marquee } from "./motion";
 
 const links = [
@@ -83,9 +84,12 @@ export function Navbar() {
           scrolled ? "max-w-6xl border border-white/10 bg-ink-900/70 shadow-2xl shadow-black/40 backdrop-blur-xl" : "max-w-7xl border border-transparent",
         )}
       >
-        <NavLink to="/" aria-label="Mathur Enterprises home">
-          <Logo />
-        </NavLink>
+        <div className="flex flex-col">
+          <NavLink to="/" aria-label="Mathur Enterprises home">
+            <Logo />
+          </NavLink>
+          <PoweredBy className="mt-1 hidden pl-[3.1rem] !text-[0.5rem] !tracking-[0.2em] sm:inline-flex" />
+        </div>
 
         <ul className="hidden items-center gap-1 lg:flex">
           {links.map((l) => (
