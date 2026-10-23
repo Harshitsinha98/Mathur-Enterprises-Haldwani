@@ -4,6 +4,9 @@ import { cn } from "../lib/utils";
 
 const dims = sizes as unknown as Record<string, [number, number]>;
 
+/** True when the photo exists in the optimized set (photos.json → npm run images). */
+export const hasImg = (id?: string) => !!id && id in dims;
+
 export const imgSrc = (id: string, size: "sm" | "lg" = "lg") => `/img/${id}-${size}.webp`;
 export const imgRatio = (id: string) => {
   const d = dims[id];

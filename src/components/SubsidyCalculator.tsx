@@ -3,7 +3,7 @@ import { ArrowRight, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { solar, ui } from "../data/content";
 import { useLang } from "../lib/i18n";
-import { centralSubsidy, recommendKw, UNITS_PER_KW_MONTH } from "../lib/solar";
+import { recommendKw, totalSubsidy, UNITS_PER_KW_MONTH } from "../lib/solar";
 import { waLink } from "../lib/utils";
 
 function AnimatedRupee({ value }: { value: number }) {
@@ -47,7 +47,7 @@ export function SubsidyCalculator() {
   const [rate, setRate] = useState(6);
 
   const kw = recommendKw(units);
-  const subsidy = centralSubsidy(kw);
+  const subsidy = totalSubsidy(kw);
   const yearly = Math.round(Math.min(units, kw * UNITS_PER_KW_MONTH) * rate * 12);
 
   const msg =
