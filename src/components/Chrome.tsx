@@ -6,6 +6,7 @@ import { brand, ui, verticals } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { EMAIL, MAPS_LINK, PHONE, PHONE2, mailLink, tel2Link, telLink, waLink } from "../lib/utils";
 import { Logo } from "./Logo";
+import { PoweredBy } from "./PoweredBy";
 
 export function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -90,13 +91,16 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/5">
-        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/40 sm:flex-row">
-          <span className="text-center sm:text-left">
-            © {new Date().getFullYear()} Mathur Enterprises, Haldwani. {t(ui.footer.rights)}
-            {business.gstin && <span className="block sm:ml-2 sm:inline">GSTIN: {business.gstin}</span>}
-            {business.udyam && <span className="block sm:ml-2 sm:inline">Udyam: {business.udyam}</span>}
-          </span>
-          <span className="flex gap-3">{brand.pillars.map((p) => <span key={p.en}>{t(p)}</span>)}</span>
+        <div className="container-x flex flex-col items-center gap-4 py-6 text-xs text-white/40">
+          <div className="flex w-full flex-col items-center justify-between gap-2 sm:flex-row">
+            <span className="text-center sm:text-left">
+              © {new Date().getFullYear()} Mathur Enterprises, Haldwani. {t(ui.footer.rights)}
+              {business.gstin && <span className="block sm:ml-2 sm:inline">GSTIN: {business.gstin}</span>}
+              {business.udyam && <span className="block sm:ml-2 sm:inline">Udyam: {business.udyam}</span>}
+            </span>
+            <span className="hidden gap-3 sm:flex">{brand.pillars.map((p) => <span key={p.en}>{t(p)}</span>)}</span>
+          </div>
+          <PoweredBy />
         </div>
       </div>
     </footer>

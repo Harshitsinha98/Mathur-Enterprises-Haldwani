@@ -65,6 +65,12 @@ const localBusiness = {
   brand: ["RAJHANSev", "Okaya", "Luno", "Waaree", "Solastice", "Havells"].map((name) => ({ "@type": "Brand", name })),
   award: ["REDA RenewX 2026", "Uttarakhand 2047 Conference recognition", "Havells Certificate of Appreciation", "LUNO Solarpreneur"],
   makesOffer: verticals.map((v) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: v.name.en, description: v.body.en, url: url(v.path) } })),
+  hasCredential: business.certificates.map((c) => ({
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: c.label.en,
+    identifier: c.value,
+    url: `${SITE}${c.file}`,
+  })),
   sameAs: business.profiles,
 };
 const website = { "@type": "WebSite", "@id": `${SITE}/#website`, url: `${SITE}/`, name: business.legalName, inLanguage: ["en-IN", "hi-IN"], publisher: { "@id": orgId } };
@@ -170,7 +176,7 @@ fs.writeFileSync(
 - Phone/WhatsApp: ${PHONE} · Phone: ${PHONE2} · Email: ${EMAIL}
 - Branches: ${branches.map((b) => b.name.en).join(", ")}.
 - Areas served: Haldwani, Kashipur, Lalkuan, Rudrapur, Pantnagar, Halduchaur, Kichha, Bazpur, Nainital district, Udham Singh Nagar, Bareilly (UP).
-${business.gstin ? `- GSTIN: ${business.gstin}\n` : ""}${business.udyam ? `- Udyam Registration: ${business.udyam}\n` : ""}
+${business.gstin ? `- GSTIN: ${business.gstin}\n` : ""}${business.udyam ? `- Udyam Registration: ${business.udyam}\n` : ""}${business.certificates.length ? `- Certificates: ${business.certificates.map((c) => `${c.label.en} ${SITE}${c.file}`).join("; ")}\n` : ""}
 ## Businesses
 ${verticals.map((v) => `- [${v.name.en}](${url(v.path)}): ${v.body.en}`).join("\n")}
 

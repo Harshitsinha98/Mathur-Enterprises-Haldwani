@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Navigation, Phone, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { Certifications } from "../components/Certifications";
 import { WhatsAppIcon } from "../components/Chrome";
 import { Img } from "../components/Img";
 import { Reveal, SectionHeading, SpotlightCard } from "../components/motion";
@@ -134,6 +135,8 @@ export default function Contact() {
           </form>
         </Reveal>
       </section>
+
+      <Certifications />
 
       <section className="container-x py-24">
         <SectionHeading eyebrow={L("Branches", "शाखाएँ")} title={L("Find us across Kumaon & Terai", "कुमाऊँ और तराई में हमें खोजें")} />

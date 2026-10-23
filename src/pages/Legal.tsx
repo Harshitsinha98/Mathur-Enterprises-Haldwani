@@ -45,6 +45,17 @@ function Contact() {
         )}
       </p>
       <p className="mt-3">Grievance officer: {business.owner}. We aim to respond within 7 working days.</p>
+      <p className="mt-3">
+        Verified certificates:{" "}
+        {business.certificates.map((c, i) => (
+          <span key={c.key}>
+            {i > 0 && " · "}
+            <a href={c.file} target="_blank" rel="noreferrer">
+              {c.label.en} ({c.value})
+            </a>
+          </span>
+        ))}
+      </p>
     </section>
   );
 }
