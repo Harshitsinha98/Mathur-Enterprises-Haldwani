@@ -14,17 +14,26 @@ const MAP = {
   // brand
   "brand-poster": "WhatsApp Image 2026-10-11 at 04.11.07.jpeg",
 
-  // team (files named by the client)
-  "team-aakash-mathur": "Aakash mathur  Mathur enterprises  Ceo.jpg",
-  "team-anuj-sharma": "Anuj.sharma lalkuam solar house  Brach manager.jpg",
-  "team-bagwati-chouhan": "Bagwati chouhan  Haldwani manager.jpg",
-  "team-dharmveer-mourya": "Dharmveer singh mourya  E rikshsa e scooty head sale manger.jpg",
-  "team-jay-nagar": "Jay nagar sale manger Jay nagar solar house.jpg",
-  "team-darwara-singh": "Kahsipur brach menger  Darwara singh.jpeg",
-  "team-amit-diwakar": "Pantnagar branch maneger  Amit diwakr.jpg",
-  "team-rohit-sharma": "Service head  Rohit Sharma.jpg",
-  "team-sunil-diwakar": "Sunil kumar diwakar  Uttrakhand uttrapardesh  Sale manager.jpg",
-  "team-ankit-diwakar": "Team Solar plant installation head  Ankit diwakar.jpeg",
+  // team (from /team member pic, named by the client)
+  "team-aakash-mathur": "../team member pic/Aakash mathur  Mathur enterprises  Ceo.jpg",
+  "team-amit-diwakar": "../team member pic/Amit Diwakar Pantnagar , Branch Manager.jpg",
+  "team-anuj-sharma": "../team member pic/Anuj.sharma lalkuam solar house  Brach manager.jpg",
+  "team-bagwati-chouhan": "../team member pic/Bagwati chouhan  Haldwani manager.jpg",
+  "team-jay-nagar": "../team member pic/Jay nagar sale manger Jay nagar solar house.jpg",
+  "team-darwara-singh": "../team member pic/Kahsipur brach menger  Darwara singh.jpeg",
+  "team-naitik-gurung": "../team member pic/Naitik Gurung  Designation - Solar Adviser , Haldwani.jpeg",
+  "team-ravi-sharma": "../team member pic/Ravi sharma  Kashipur solar house manger.jpg",
+  "team-rishabh-bhatnagar": "../team member pic/Rishabh Bhatnagar Solar Adviser , Bareilly.jpg",
+  "team-rohit-sharma": "../team member pic/Rohit Sharma  Service Head.jpg",
+  "team-lakhan-bisht": "../team member pic/Sales manager  Dist -Nainital lakhan singh bisht.jpg",
+  "team-sanjay-choudhary": "../team member pic/Sanjay Choudhary  Halduchour brach maneger.jpg",
+  "team-parmod-kumar": "../team member pic/Service engineer  Parmod kumar.jpg",
+  "team-anirudh-tripathi": "../team member pic/Service engineer  अनिरुद्ध त्रिपाठी  उत्तराखंड.jpg",
+  "team-rahul-goswami": "../team member pic/Solar adviser haldwani  Rahul Goswami.jpg",
+  "team-shashi-kohli": "../team member pic/Solar adviser  Shashi kholi  Dist.-  nainital.jpg",
+  "team-sunil-diwakar": "../team member pic/Sunil kumar diwakar  Uttrakhand uttrapardesh  Sale manager.jpg",
+  "team-ankit-diwakar": "../team member pic/Team Solar plant installation head  Ankit diwakar.jpeg",
+  "team-vivek-kumar": "../team member pic/Vivek kumar  Solar adivoger kashipur.jpeg",
 
   // storefronts
   "store-haldwani": "20261006_114753amByGPSMapCamera.jpg",
