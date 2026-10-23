@@ -15,5 +15,10 @@ export function waLink(message?: string) {
 
 export const telLink = `tel:+${PHONE_RAW}`;
 
+export const PHONE2 = "+91 90847 35451";
+export const tel2Link = "tel:+919084735451";
+export const EMAIL = "Aakashmathur3@gmail.com";
+export const mailLink = `mailto:${EMAIL}`;
+
 export const MAPS_LINK =
   "https://www.google.com/maps/search/?api=1&query=Mathur+Enterprises+Dahariya+Haldwani";

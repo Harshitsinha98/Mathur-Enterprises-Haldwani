@@ -409,7 +409,7 @@ export const team: Tier[] = [
     title: { en: "Department Heads", hi: "विभाग प्रमुख" },
     members: [
       { name: "Sunil Kumar Diwakar", nameHi: "सुनील कुमार दिवाकर", role: { en: "Sales Manager, Uttarakhand & UP", hi: "सेल्स मैनेजर, उत्तराखंड और यूपी" }, photo: "team-sunil-diwakar" },
-      { name: "Dharmveer Singh Mourya", nameHi: "धर्मवीर सिंह मौर्य", role: { en: "Head of Sales, E-Rickshaw & E-Scooty", hi: "सेल्स हेड, ई-रिक्शा और ई-स्कूटी" } },
+      { name: "Dharmveer Singh Mourya", nameHi: "धर्मवीर सिंह मौर्य", role: { en: "Head of Sales, E-Rickshaw & E-Scooty", hi: "सेल्स हेड, ई-रिक्शा और ई-स्कूटी" }, photo: "team-dharmveer-mourya" },
       { name: "Rohit Sharma", nameHi: "रोहित शर्मा", role: { en: "Service Head", hi: "सर्विस हेड" }, photo: "team-rohit-sharma" },
       { name: "Ankit Diwakar", nameHi: "अंकित दिवाकर", role: { en: "Solar Plant Installation Head", hi: "सोलर प्लांट इंस्टॉलेशन हेड" }, photo: "team-ankit-diwakar" },
     ],
@@ -442,7 +442,7 @@ export const team: Tier[] = [
     members: [
       { name: "Parmod Kumar", nameHi: "प्रमोद कुमार", role: { en: "Service Engineer", hi: "सर्विस इंजीनियर" }, photo: "team-parmod-kumar" },
       { name: "Anirudh Tripathi", nameHi: "अनिरुद्ध त्रिपाठी", role: { en: "Service Engineer, Uttarakhand", hi: "सर्विस इंजीनियर, उत्तराखंड" }, photo: "team-anirudh-tripathi" },
-      { name: "Prakash Melkani", nameHi: "प्रकाश मेलकानी", role: { en: "Accounts Department", hi: "अकाउंट्स विभाग" } },
+      { name: "Prakash Chandra Melkani", nameHi: "प्रकाश चंद्र मेलकानी", role: { en: "Accountant", hi: "अकाउंटेंट" }, photo: "team-prakash-melkani" },
     ],
   },
 ];

@@ -136,3 +136,15 @@ html[lang="hi"] [class*="tracking-"]:not(.font-logo) {
   0%, 55% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
+
+/* Static crawler text from scripts/seo.mts; React replaces it on load. Kept readable if JS is off. */
+.seo-fallback {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 7rem 1.25rem 4rem;
+  color: rgb(255 255 255 / 0.75);
+  line-height: 1.6;
+}
+.seo-fallback h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+.seo-fallback h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin: 1.5rem 0 0.5rem; }
+.seo-fallback ul, .seo-fallback ol { padding-left: 1.25rem; list-style: disc; }

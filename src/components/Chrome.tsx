@@ -1,9 +1,10 @@
 import { motion, useScroll, useSpring } from "framer-motion";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { business } from "../data/business";
 import { brand, ui, verticals } from "../data/content";
 import { useLang } from "../lib/i18n";
-import { MAPS_LINK, PHONE, telLink, waLink } from "../lib/utils";
+import { EMAIL, MAPS_LINK, PHONE, PHONE2, mailLink, tel2Link, telLink, waLink } from "../lib/utils";
 import { Logo } from "./Logo";
 
 export function WhatsAppIcon({ className }: { className?: string }) {
@@ -53,6 +54,8 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link to="/team" className="text-white/70 hover:text-white">{t(ui.nav.team)}</Link></li>
             <li><Link to="/contact" className="text-white/70 hover:text-white">{t(ui.nav.contact)}</Link></li>
+            <li><Link to="/privacy" className="text-white/70 hover:text-white">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="text-white/70 hover:text-white">Terms of Service</Link></li>
           </ul>
         </div>
         <div>
@@ -61,6 +64,16 @@ export function Footer() {
             <li>
               <a href={telLink} className="flex items-center gap-2 text-white/80 hover:text-white">
                 <Phone className="h-4 w-4 text-sun-400" /> {PHONE}
+              </a>
+            </li>
+            <li>
+              <a href={tel2Link} className="flex items-center gap-2 text-white/80 hover:text-white">
+                <Phone className="h-4 w-4 text-sun-400" /> {PHONE2}
+              </a>
+            </li>
+            <li>
+              <a href={mailLink} className="flex items-center gap-2 break-all text-white/80 hover:text-white">
+                <Mail className="h-4 w-4 shrink-0 text-sun-400" /> {EMAIL}
               </a>
             </li>
             <li>
@@ -78,7 +91,11 @@ export function Footer() {
       </div>
       <div className="border-t border-white/5">
         <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/40 sm:flex-row">
-          <span>© {new Date().getFullYear()} Mathur Enterprises, Haldwani. {t(ui.footer.rights)}</span>
+          <span className="text-center sm:text-left">
+            © {new Date().getFullYear()} Mathur Enterprises, Haldwani. {t(ui.footer.rights)}
+            {business.gstin && <span className="block sm:ml-2 sm:inline">GSTIN: {business.gstin}</span>}
+            {business.udyam && <span className="block sm:ml-2 sm:inline">Udyam: {business.udyam}</span>}
+          </span>
           <span className="flex gap-3">{brand.pillars.map((p) => <span key={p.en}>{t(p)}</span>)}</span>
         </div>
       </div>

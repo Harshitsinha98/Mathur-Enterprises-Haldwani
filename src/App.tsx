@@ -9,21 +9,43 @@ import { EnquirySheet } from "./components/EnquirySheet";
 import { Navbar } from "./components/Navbar";
 import { LangProvider, useLang } from "./lib/i18n";
 import Home from "./pages/Home";
+import { routeMeta } from "./data/seo";
 
 const Solar = lazy(() => import("./pages/Solar"));
 const RajhansEV = lazy(() => import("./pages/RajhansEV"));
 const Okaya = lazy(() => import("./pages/Okaya"));
 const Team = lazy(() => import("./pages/Team"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Legal").then((m) => ({ default: m.Privacy })));
+const Terms = lazy(() => import("./pages/Legal").then((m) => ({ default: m.Terms })));
 
-const titles: Record<string, string> = {
-  "/": "Mathur Enterprises, Haldwani | Solar · Rajhans EV · Okaya",
-  "/solar": "Rooftop Solar & PM Surya Ghar | Mathur Enterprises",
-  "/rajhans-ev": "Rajhans E-Rickshaw Haldwani & Kichha | Mathur Enterprises",
-  "/okaya": "Okaya Inverter & Battery Distributor | Mathur Enterprises",
-  "/team": "Our Team | Mathur Enterprises",
-  "/contact": "Contact | Mathur Enterprises, Haldwani",
-};
+/** Keep <title>, description, canonical and OG tags in sync with the route. */
+function applyMeta(path: string) {
+  const m = routeMeta[path];
+  document.title = m?.title ?? routeMeta["/"].title;
+  const set = (sel: string, attr: string, val: string, create: () => HTMLElement) => {
+    let el = document.head.querySelector(sel);
+    if (!el) {
+      el = create();
+      document.head.appendChild(el);
+    }
+    el.setAttribute(attr, val);
+  };
+  const meta = (key: string, prop = false) => () => {
+    const e = document.createElement("meta");
+    e.setAttribute(prop ? "property" : "name", key);
+    return e;
+  };
+  const url = window.location.origin + (path === "/" ? "/" : path);
+  if (m) {
+    set('meta[name="description"]', "content", m.description, meta("description"));
+    set('meta[property="og:title"]', "content", m.title, meta("og:title", true));
+    set('meta[property="og:description"]', "content", m.description, meta("og:description", true));
+  }
+  set('meta[property="og:url"]', "content", url, meta("og:url", true));
+  set('link[rel="canonical"]', "href", url, () => Object.assign(document.createElement("link"), { rel: "canonical" }));
+  set('meta[name="robots"]', "content", m ? "index, follow" : "noindex", meta("robots"));
+}
 
 function NotFound() {
   const { lang } = useLang();
@@ -53,7 +75,7 @@ function AnimatedRoutes() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-    document.title = titles[location.pathname] ?? titles["/"];
+    applyMeta(location.pathname);
   }, [location.pathname]);
 
   return (
@@ -73,6 +95,8 @@ function AnimatedRoutes() {
             <Route path="/okaya" element={<Okaya />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
