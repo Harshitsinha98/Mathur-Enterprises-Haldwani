@@ -84,16 +84,34 @@ function StoryHero() {
           </motion.p>
         </div>
 
-        {/* founder portrait with a turning ring of sun rays */}
-        <motion.figure initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 1 }} className="relative mx-auto w-64 sm:w-80">
-          <div aria-hidden className="absolute -inset-10 animate-spin-slow rounded-full bg-[repeating-conic-gradient(from_0deg,rgba(255,194,26,0.35)_0deg_3deg,transparent_3deg_14deg)] [mask-image:radial-gradient(circle,transparent_52%,black_56%,transparent_72%)]" />
-          <div aria-hidden className="absolute -inset-4 rounded-full bg-sun-400/20 blur-3xl" />
-          <div className="relative aspect-square overflow-hidden rounded-full border-4 border-white/10 shadow-2xl">
-            <Img id={story.authorPhoto} alt={t(story.author)} eager sizes="320px" className="h-full w-full object-cover" />
+        {/* the two brothers, with a turning ring of sun rays */}
+        <motion.figure initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 1 }} className="relative mx-auto w-72 pb-10 sm:w-96">
+          <div aria-hidden className="absolute inset-x-6 -top-8 bottom-2 animate-spin-slow rounded-full bg-[repeating-conic-gradient(from_0deg,rgba(255,194,26,0.35)_0deg_3deg,transparent_3deg_14deg)] [mask-image:radial-gradient(circle,transparent_52%,black_56%,transparent_72%)]" />
+          <div aria-hidden className="absolute -inset-2 rounded-full bg-sun-400/20 blur-3xl" />
+          <div className="relative flex items-end justify-center">
+            {story.authors.map((a, i) => (
+              <motion.div
+                key={a.photo}
+                initial={{ opacity: 0, x: i === 0 ? 30 : -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 + i * 0.15, duration: 0.8 }}
+                className={cn(
+                  "relative aspect-square w-40 overflow-hidden rounded-full border-4 shadow-2xl sm:w-52",
+                  i === 0 ? "z-10 border-sun-400/70" : "-ml-10 mb-4 border-white/15 sm:-ml-14",
+                )}
+              >
+                <Img id={a.photo} alt={t(a.name)} eager sizes="220px" className="h-full w-full object-cover" />
+              </motion.div>
+            ))}
           </div>
-          <figcaption className="glass absolute -bottom-4 left-1/2 w-max -translate-x-1/2 rounded-full px-5 py-2 text-center">
-            <span className="block font-display text-sm font-bold">{t(story.author)}</span>
-            <span className="block text-[11px] text-white/55">{t(story.authorRole)}</span>
+          <figcaption className="glass absolute bottom-0 left-1/2 w-max max-w-[95%] -translate-x-1/2 rounded-2xl px-5 py-2 text-center">
+            {story.authors.map((a) => (
+                <span key={a.photo} className="inline-flex flex-col px-2 align-top">
+                <span className="font-display text-sm font-bold">{t(a.name)}</span>
+                <span className="text-[10px] text-white/55">{t(a.role)}</span>
+              </span>
+            ))}
+            <span className="mt-1 block text-[11px] font-semibold text-sun-300">{t(story.signByRole)}</span>
           </figcaption>
         </motion.figure>
       </div>
@@ -283,15 +301,19 @@ function Letter() {
           <p className="mt-6 leading-[1.8]">{t(story.ahead)}</p>
 
           <div className="mt-10 flex items-center gap-4 border-t border-[#1b2238]/10 pt-6">
-            <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-sun-500/50">
-              <Img id={story.authorPhoto} alt={t(story.author)} sizes="56px" className="h-full w-full object-cover" />
+            <div className="flex shrink-0 -space-x-4">
+              {story.authors.map((a) => (
+                <div key={a.photo} className="h-14 w-14 overflow-hidden rounded-full ring-2 ring-sun-500/50">
+                  <Img id={a.photo} alt={t(a.name)} sizes="56px" className="h-full w-full object-cover" />
+                </div>
+              ))}
             </div>
             <div>
               <p className="flex items-center gap-1.5 font-semibold">
                 <Heart className="h-4 w-4 fill-raj-500 text-raj-500" /> {t(story.signoff)}
               </p>
-              <p className="mt-0.5 font-display text-lg italic">{t(story.author)}</p>
-              <p className="text-xs text-[#1b2238]/60">{t(story.authorRole)}</p>
+              <p className="mt-0.5 font-display text-lg italic">{t(story.signByline)}</p>
+              <p className="text-xs text-[#1b2238]/60">{t(story.signByRole)}</p>
             </div>
           </div>
         </motion.article>

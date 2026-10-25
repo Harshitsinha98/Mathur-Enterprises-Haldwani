@@ -1,28 +1,32 @@
 import type { L } from "../lib/i18n";
 
 /**
- * Founder's story, shown on /story and teased on the home page.
- * Hindi is the founder's own text; English is a translation for the language toggle.
+ * The founders' story (two brothers), shown on /story and teased on the home page.
+ * Hindi is the founders' own words; English is a translation for the language toggle.
  */
 export type StoryIcon = "bike" | "briefcase" | "zap" | "store" | "tv" | "storm" | "trend" | "sun";
 
 export const story = {
-  author: { en: "Aakash Mathur", hi: "आकाश माथुर" },
-  authorRole: { en: "Director, Mathur Enterprises", hi: "डायरेक्टर, माथुर एंटरप्राइजेज़" },
-  authorPhoto: "team-aakash-mathur",
+  /** Two brothers who built Mathur Enterprises together. */
+  authors: [
+    { name: { en: "Kapil Mathur", hi: "कपिल माथुर" }, role: { en: "CEO, Mathur Enterprises", hi: "CEO, माथुर एंटरप्राइजेज़" }, photo: "team-kapil-mathur" },
+    { name: { en: "Aakash Mathur", hi: "आकाश माथुर" }, role: { en: "Director, Mathur Enterprises", hi: "डायरेक्टर, माथुर एंटरप्राइजेज़" }, photo: "team-aakash-mathur" },
+  ],
+  signByline: { en: "Kapil Mathur & Aakash Mathur", hi: "कपिल माथुर और आकाश माथुर" },
+  signByRole: { en: "The Mathur brothers", hi: "माथुर बंधु" },
 
   eyebrow: { en: "Our story", hi: "हमारी कहानी" },
   title: {
-    en: "From a small cycle shop to a name Uttarakhand trusts",
-    hi: "एक छोटी-सी साइकिल की दुकान से उत्तराखंड में पहचान बनाने तक का सफर",
+    en: "Two brothers, one dream: from a small cycle shop to a name Uttarakhand trusts",
+    hi: "दो भाई, एक सपना: एक छोटी-सी साइकिल की दुकान से उत्तराखंड में पहचान बनाने तक का सफर",
   },
   quote: {
     en: "The work may be small, but dreams should never be.",
     hi: "मेहनत छोटी हो सकती है, लेकिन सपने कभी छोटे नहीं होने चाहिए।",
   },
   intro: {
-    en: "My journey began in 2005 at a small cycle shop in Lalkuan. I didn't have big resources then, but I did have a dream of doing something big. That little shop taught me hard work, honesty, discipline and how to earn people's trust.",
-    hi: "मेरी जिंदगी का सफर वर्ष 2005 में लालकुआँ की एक छोटी-सी साइकिल की दुकान से शुरू हुआ था। उस समय मेरे पास बड़े साधन नहीं थे, लेकिन मन में कुछ बड़ा करने का सपना जरूर था। उस छोटी-सी दुकान ने मुझे मेहनत, ईमानदारी, अनुशासन और लोगों का विश्वास जीतना सिखाया।",
+    en: "Our journey began in 2005 at a small cycle shop in Lalkuan. Two brothers, with no big resources but a shared dream of doing something big. That little shop taught us hard work, honesty, discipline and how to earn people's trust — and we have walked every step of this road together ever since.",
+    hi: "हमारा सफर वर्ष 2005 में लालकुआँ की एक छोटी-सी साइकिल की दुकान से शुरू हुआ था। दो भाई, जिनके पास बड़े साधन नहीं थे, पर एक साझा सपना जरूर था — कुछ बड़ा करने का। उस छोटी-सी दुकान ने हमें मेहनत, ईमानदारी, अनुशासन और लोगों का विश्वास जीतना सिखाया — और तब से इस सफर का हर कदम हमने साथ मिलकर तय किया है।",
   },
 
   chapters: [
@@ -103,29 +107,29 @@ export const story = {
       image: "solar-haldwani-3",
       title: { en: "A new chapter in solar", hi: "सोलर ऊर्जा के क्षेत्र में नया अध्याय" },
       body: {
-        en: "In 2024 we stepped into solar, resolving to bring solar power to people through the PM Surya Ghar: Muft Bijli Yojana. Becoming known as No. 1 in this field in Uttarakhand makes me proud. It belongs to our whole team, partners, customers and everyone who trusted us.",
-        hi: "वर्ष 2024 में हमने सोलर के क्षेत्र में कदम रखा। प्रधानमंत्री सूर्य घर: मुफ्त बिजली योजना के माध्यम से लोगों तक सोलर ऊर्जा का लाभ पहुँचाने का संकल्प लिया। आज इस क्षेत्र में उत्तराखंड में नंबर 1 की पहचान बनाने तक का जो सफर तय हुआ है, वह मेरे लिए गर्व की बात है। यह उपलब्धि केवल मेरी नहीं, बल्कि हमारी पूरी टीम, हमारे सहयोगियों, ग्राहकों और उन सभी लोगों की है जिन्होंने हम पर भरोसा किया।",
+        en: "In 2024 we stepped into solar, resolving to bring solar power to people through the PM Surya Ghar: Muft Bijli Yojana. Becoming known as No. 1 in this field in Uttarakhand makes us proud. It belongs to our whole team, partners, customers and everyone who trusted us.",
+        hi: "वर्ष 2024 में हमने सोलर के क्षेत्र में कदम रखा। प्रधानमंत्री सूर्य घर: मुफ्त बिजली योजना के माध्यम से लोगों तक सोलर ऊर्जा का लाभ पहुँचाने का संकल्प लिया। आज इस क्षेत्र में उत्तराखंड में नंबर 1 की पहचान बनाने तक का जो सफर तय हुआ है, वह हमारे लिए गर्व की बात है। यह उपलब्धि केवल मेरी नहीं, बल्कि हमारी पूरी टीम, हमारे सहयोगियों, ग्राहकों और उन सभी लोगों की है जिन्होंने हम पर भरोसा किया।",
       },
     },
   ] as { year: string; icon: StoryIcon; image?: string; storm?: boolean; title: L; body: L; highlight?: L }[],
 
-  letterTitle: { en: "My biggest asset: your trust", hi: "मेरी सबसे बड़ी पूँजी — आप सभी का विश्वास" },
+  letterTitle: { en: "Our biggest asset: your trust", hi: "हमारी सबसे बड़ी पूँजी — आप सभी का विश्वास" },
   letter: [
     {
-      en: "When I look back today, the whole road from that little cycle shop in Lalkuan to Mathur Enterprises comes before my eyes.",
-      hi: "आज जब मैं पीछे मुड़कर देखता हूँ, तो लालकुआँ की उस छोटी-सी साइकिल की दुकान से लेकर Mathur Enterprises तक का सफर मेरी आँखों के सामने आ जाता है।",
+      en: "When we look back today, the whole road from that little cycle shop in Lalkuan to Mathur Enterprises comes before our eyes.",
+      hi: "आज जब हम पीछे मुड़कर देखते हैं, तो लालकुआँ की उस छोटी-सी साइकिल की दुकान से लेकर Mathur Enterprises तक का सफर हमारी आँखों के सामने आ जाता है।",
     },
     {
-      en: "It wasn't easy. Every phase taught me something, every challenge made me stronger, and every customer inspired me to move ahead.",
-      hi: "यह सफर आसान नहीं था। हर दौर ने कुछ सिखाया, हर चुनौती ने मजबूत बनाया और हर ग्राहक ने आगे बढ़ने की प्रेरणा दी।",
+      en: "It wasn't easy. Every phase taught us something, every challenge made us stronger, and every customer inspired us to move ahead.",
+      hi: "यह सफर आसान नहीं था। हर दौर ने हमें कुछ सिखाया, हर चुनौती ने हमें मजबूत बनाया और हर ग्राहक ने हमें आगे बढ़ने की प्रेरणा दी।",
     },
     {
-      en: "I thank, from my heart, every customer, friend, partner and well-wisher who stood with me at every step and believed in me. Your trust is what let me stay No. 1 in e-rickshaws and build our name in solar across Uttarakhand.",
-      hi: "मैं दिल से धन्यवाद करता हूँ उन सभी ग्राहकों, मित्रों, सहयोगियों और शुभचिंतकों का, जिन्होंने हर कदम पर मेरा साथ दिया और मुझ पर विश्वास किया। आप सभी के विश्वास ने ही मुझे ई-रिक्शा के क्षेत्र में लगातार नंबर 1 बने रहने और सोलर के क्षेत्र में उत्तराखंड में अपनी पहचान बनाने का मौका दिया।",
+      en: "We thank, from our hearts, every customer, friend, partner and well-wisher who stood with us at every step and believed in us. Your trust is what let us stay No. 1 in e-rickshaws and build our name in solar across Uttarakhand.",
+      hi: "हम दिल से धन्यवाद करते हैं उन सभी ग्राहकों, मित्रों, सहयोगियों और शुभचिंतकों का, जिन्होंने हर कदम पर हमारा साथ दिया और हम पर विश्वास किया। आप सभी के विश्वास ने ही हमें ई-रिक्शा के क्षेत्र में लगातार नंबर 1 बने रहने और सोलर के क्षेत्र में उत्तराखंड में अपनी पहचान बनाने का मौका दिया।",
     },
     {
-      en: "My thinking is still what it was in 2005: work honestly, keep working hard, and keep people's trust.",
-      hi: "मेरी सोच आज भी वही है जो 2005 में थी—ईमानदारी से काम करना, मेहनत करते रहना और लोगों का विश्वास बनाए रखना।",
+      en: "Our thinking is still what it was in 2005: work honestly, keep working hard, and keep people's trust.",
+      hi: "हमारी सोच आज भी वही है जो 2005 में थी—ईमानदारी से काम करना, मेहनत करते रहना और लोगों का विश्वास बनाए रखना।",
     },
   ] as L[],
   values: [
@@ -141,7 +145,7 @@ export const story = {
     en: "This journey isn't over. There is further to go, new milestones to reach, and your trust to make even stronger. What began in 2005 with a small cycle shop is now heading towards new dreams and new heights.",
     hi: "यह सफर अभी खत्म नहीं हुआ है। अभी और आगे बढ़ना है, नए मुकाम हासिल करने हैं और आप सभी के विश्वास को और मजबूत बनाना है। 2005 में एक छोटी-सी साइकिल की दुकान से शुरू हुआ सफर… आज नए सपनों और नई ऊँचाइयों की ओर बढ़ रहा है।",
   },
-  signoff: { en: "Your trust is my strength.", hi: "आपका विश्वास ही मेरी ताकत है।" },
+  signoff: { en: "Your trust is our strength.", hi: "आपका विश्वास ही हमारी ताकत है।" },
   motto: { en: "Mathur Enterprises: your trust, our identity.", hi: "Mathur Enterprises — आपका विश्वास, हमारी पहचान।" },
 
   teaserTitle: { en: "It started with one cycle shop in Lalkuan.", hi: "यह सफर लालकुआँ की एक साइकिल की दुकान से शुरू हुआ।" },

@@ -139,8 +139,8 @@ export const home = {
   teamEyebrow: { en: "The people", hi: "हमारे लोग" },
   teamTitle: { en: "A team that shows up", hi: "हर वक़्त साथ खड़ी टीम" },
   teamBody: {
-    en: "20+ people across sales, installation, service and accounts, led by Director Aakash Mathur and CEO Kapil Mathur.",
-    hi: "सेल्स, इंस्टॉलेशन, सर्विस और अकाउंट्स में 20+ लोग, डायरेक्टर आकाश माथुर और CEO कपिल माथुर के नेतृत्व में।",
+    en: "20+ people across sales, installation, service and accounts, led by brothers Kapil Mathur (CEO) and Aakash Mathur (Director).",
+    hi: "सेल्स, इंस्टॉलेशन, सर्विस और अकाउंट्स में 20+ लोग, भाइयों कपिल माथुर (CEO) और आकाश माथुर (डायरेक्टर) के नेतृत्व में।",
   },
   ctaTitle: { en: "Ready to cut your electricity bill?", hi: "बिजली का बिल घटाने के लिए तैयार हैं?" },
   ctaBody: {
@@ -405,8 +405,8 @@ export const team: Tier[] = [
   {
     title: { en: "Leadership", hi: "नेतृत्व" },
     members: [
-      { name: "Aakash Mathur", nameHi: "आकाश माथुर", role: { en: "Director, Mathur Enterprises", hi: "डायरेक्टर, माथुर एंटरप्राइजेज़" }, photo: "team-aakash-mathur" },
       { name: "Kapil Mathur", nameHi: "कपिल माथुर", role: { en: "CEO, Mathur Enterprises", hi: "CEO, माथुर एंटरप्राइजेज़" }, photo: "team-kapil-mathur" },
+      { name: "Aakash Mathur", nameHi: "आकाश माथुर", role: { en: "Director, Mathur Enterprises", hi: "डायरेक्टर, माथुर एंटरप्राइजेज़" }, photo: "team-aakash-mathur" },
     ],
   },
   {
