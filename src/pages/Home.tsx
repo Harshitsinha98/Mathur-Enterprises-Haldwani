@@ -1,6 +1,8 @@
 import { ArrowRight, Award, BadgeCheck, Check, MapPin, MapPinned, ShieldCheck, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Img } from "../components/Img";
+import { Certifications } from "../components/Certifications";
+import { Faq } from "../components/Faq";
 import { Hero } from "../components/Hero";
 import { Counter, Reveal, SectionHeading, SpotlightCard } from "../components/motion";
 import { BrandMarquee, CtaBand, ExploreLink, GhostButton, HorizontalScroller, PrimaryButton, TeamCard, VerticalCards } from "../components/sections";
@@ -252,6 +254,8 @@ export default function Home() {
       <Identity />
       <TeamPreview />
       <BranchStrip />
+      <Certifications />
+      <Faq />
       <CtaBand />
     </>
   );

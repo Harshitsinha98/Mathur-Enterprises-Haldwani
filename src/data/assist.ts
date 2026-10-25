@@ -3,7 +3,7 @@ import type { VerticalKey } from "./content";
 
 /* ------------------------------ Top ticker ------------------------------ */
 export const ticker: L[] = [
-  { en: "PM Surya Ghar: central subsidy up to ₹78,000 on rooftop solar", hi: "पीएम सूर्य घर: रूफटॉप सोलर पर ₹78,000 तक केंद्रीय सब्सिडी" },
+  { en: "PM Surya Ghar: subsidy up to ₹85,800 on rooftop solar", hi: "पीएम सूर्य घर: रूफटॉप सोलर पर ₹85,800 तक सब्सिडी" },
   { en: "Free solar site survey across Kumaon & Terai", hi: "कुमाऊँ और तराई में मुफ़्त सोलर साइट सर्वे" },
   { en: "Rajhans e-rickshaw: easy finance, Haldwani & Kichha", hi: "राजहंस ई-रिक्शा: आसान फ़ाइनेंस, हल्द्वानी और किच्छा" },
   { en: "Okaya dealer enquiries open", hi: "ओकाया डीलरशिप के लिए संपर्क करें" },

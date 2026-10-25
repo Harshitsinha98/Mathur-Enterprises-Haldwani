@@ -6,7 +6,7 @@ import { home, partnerBrands, ui, verticals, type Member, type VerticalKey } fro
 import { useLang } from "../lib/i18n";
 import { cn, telLink, waLink } from "../lib/utils";
 import { WhatsAppIcon } from "./Chrome";
-import { Img } from "./Img";
+import { Img, hasImg } from "./Img";
 import { Marquee, Reveal, SpotlightCard, WordReveal } from "./motion";
 import { Particles } from "./Particles";
 
@@ -193,7 +193,7 @@ const avatarGrads = ["from-sun-400 to-sun-600", "from-leaf-400 to-leaf-600", "fr
 
 export function Avatar({ m, className }: { m: Member; className?: string }) {
   const { lang } = useLang();
-  if (m.photo) return <Img id={m.photo} alt={m.name} sizes="300px" className={cn("h-full w-full object-cover", className)} />;
+  if (hasImg(m.photo)) return <Img id={m.photo!} alt={m.name} sizes="300px" className={cn("h-full w-full object-cover", className)} />;
   const initials = m.name.split(" ").filter(Boolean).slice(0, 2).map((p) => p[0]).join("");
   const g = avatarGrads[m.name.length % avatarGrads.length];
   return (

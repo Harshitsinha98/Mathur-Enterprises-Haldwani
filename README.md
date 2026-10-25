@@ -21,14 +21,9 @@ npm run build     # production build -> dist/
 ```
 
 ## Images
-The original photos stay untouched in `/images` (~231 MB). `npm run images` converts the mapped ones into
-compressed WebP files (640px + 1600px) in `public/img` (~15 MB in total). It also strips EXIF/GPS metadata.
-
-**Add or replace a photo:**
-1. Put the file in `/images`.
-2. Add `"some-id": "file name.jpg"` to the `MAP` in `scripts/optimize-images.mjs`.
-3. Run `npm run images` and commit `public/img` + `src/data/image-sizes.json`.
-4. Use the id in `src/data/content.ts`. For a team member, set `photo: "some-id"`.
+Originals stay untouched in `/images` and `/team member pic`. **`photos.json`** lists every photo used on the site (`id → file`).
+`scripts/optimize-images.mjs` runs automatically before every build. It converts new or changed photos into WebP (640px + 1600px) in `public/img` and strips EXIF/GPS data.
+For step-by-step instructions (in Hinglish) on adding, replacing or removing photos, see **[PHOTOS.md](PHOTOS.md)**.
 
 ## Content
 All text, in both English and Hindi, lives in `src/data/content.ts`: team, branches, products, installations and awards.
@@ -43,6 +38,13 @@ All text, in both English and Hindi, lives in `src/data/content.ts`: team, branc
 
   If no key is set, or the provider fails, the chat automatically uses the built-in rule-based assistant in `src/lib/assistant.ts`, so it never breaks. The API key stays on the server.
   Keep `KNOWLEDGE` in `api/chat.ts` in sync with `src/data/content.ts` when business details change.
+
+## SEO
+- `src/data/seo.ts`: title and description for every page.
+- `src/data/faq.ts`: FAQs, shown on the home page and published as FAQPage schema.
+- `src/data/business.ts`: legal name, **GSTIN and Udyam number** (fill these from the certificates; empty values stay hidden).
+- `scripts/seo.mts` runs after `vite build`. It writes a static HTML file per route with its own meta tags, LocalBusiness/FAQ JSON-LD and readable page text (for crawlers that don't run JS), plus `sitemap.xml`, `robots.txt` and `llms.txt`.
+- The site URL comes from `SITE_URL`, or else Vercel's production domain. Once you have a custom domain, set `SITE_URL=https://yourdomain.in` in Vercel.
 
 ## Deploy (Vercel)
 Import the repo in Vercel. The framework is auto-detected as **Vite**, the build command is `npm run build` and the output folder is `dist`.

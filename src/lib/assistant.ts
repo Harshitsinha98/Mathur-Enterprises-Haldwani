@@ -4,7 +4,7 @@
  * network error, local dev) it falls back to a built-in rule-based assistant, so the
  * chat never breaks.
  */
-import { centralSubsidy, inr, recommendKw, UNITS_PER_KW_MONTH } from "./solar";
+import { inr, recommendKw, totalSubsidy, UNITS_PER_KW_MONTH } from "./solar";
 import { PHONE } from "./utils";
 
 export type ChatMsg = { role: "user" | "assistant"; content: string };
@@ -33,10 +33,10 @@ export function localReply(input: string, uiLang: Lang): string {
 
   // kW given -> subsidy
   if (num !== null && /\bkw\b|kilowatt|किलोवाट/.test(t)) {
-    const s = centralSubsidy(num);
+    const s = totalSubsidy(num);
     return L(
-      `For a **${num} kW** on-grid rooftop system, the central PM Surya Ghar subsidy is about **${inr(s)}**. It is credited directly to your bank account after net-metering. Additional state benefits may apply. Our advisor can confirm the exact amount.`,
-      `**${num} kW** ऑन-ग्रिड रूफटॉप सिस्टम पर पीएम सूर्य घर की केंद्रीय सब्सिडी लगभग **${inr(s)}** है। नेट-मीटरिंग के बाद यह सीधे आपके बैंक खाते में आती है। राज्य से अतिरिक्त लाभ भी मिल सकता है। सटीक राशि हमारे सलाहकार बताएँगे।`,
+      `For a **${num} kW** on-grid rooftop system, the total PM Surya Ghar subsidy (central + state) is about **${inr(s)}**. It is credited directly to your bank account after net-metering. Our advisor can confirm the exact amount.`,
+      `**${num} kW** ऑन-ग्रिड रूफटॉप सिस्टम पर पीएम सूर्य घर की कुल सब्सिडी (केंद्र + राज्य) लगभग **${inr(s)}** है। नेट-मीटरिंग के बाद यह सीधे आपके बैंक खाते में आती है। सटीक राशि हमारे सलाहकार बताएँगे।`,
     );
   }
   // units given -> recommendation
@@ -44,8 +44,8 @@ export function localReply(input: string, uiLang: Lang): string {
     const units = num;
     const kw = recommendKw(units);
     return L(
-      `With **${units} units/month**, a **${kw} kW** system is a good fit (1 kW makes roughly ${UNITS_PER_KW_MONTH} units a month here). The central subsidy would be about **${inr(centralSubsidy(kw))}**. Want a free site survey to confirm roof space?`,
-      `**${units} यूनिट/महीने** के लिए लगभग **${kw} kW** सिस्टम सही रहेगा (यहाँ 1 kW से महीने में करीब ${UNITS_PER_KW_MONTH} यूनिट बनती हैं)। केंद्रीय सब्सिडी लगभग **${inr(centralSubsidy(kw))}** होगी। छत की जगह देखने के लिए मुफ़्त साइट सर्वे बुक करें?`,
+      `With **${units} units/month**, a **${kw} kW** system is a good fit (1 kW makes roughly ${UNITS_PER_KW_MONTH} units a month here). The total subsidy would be about **${inr(totalSubsidy(kw))}**. Want a free site survey to confirm roof space?`,
+      `**${units} यूनिट/महीने** के लिए लगभग **${kw} kW** सिस्टम सही रहेगा (यहाँ 1 kW से महीने में करीब ${UNITS_PER_KW_MONTH} यूनिट बनती हैं)। कुल सब्सिडी लगभग **${inr(totalSubsidy(kw))}** होगी। छत की जगह देखने के लिए मुफ़्त साइट सर्वे बुक करें?`,
     );
   }
   if (has(t, ["price", "rate", "cost", "kimat", "keemat", "daam", "कीमत", "दाम", "रेट", "kitne ka", "kitne ki", "quotation", "quote"])) {
@@ -56,8 +56,8 @@ export function localReply(input: string, uiLang: Lang): string {
   }
   if (has(t, ["subsidy", "सब्सिडी", "surya ghar", "सूर्य घर", "yojana", "योजना"])) {
     return L(
-      "Under **PM Surya Ghar Muft Bijli Yojana**, the central subsidy is **₹30,000/kW up to 2 kW**, **₹18,000 for the 3rd kW**, and the maximum is **₹78,000** (3 kW and above). We handle registration, DISCOM approval, net-metering and the subsidy paperwork. Tell me your system size or monthly units and I'll estimate it.",
-      "**पीएम सूर्य घर मुफ़्त बिजली योजना** में केंद्रीय सब्सिडी **2 kW तक ₹30,000/kW**, **तीसरे kW पर ₹18,000**, और अधिकतम **₹78,000** (3 kW या ज़्यादा) है। रजिस्ट्रेशन, बिजली विभाग की मंज़ूरी, नेट-मीटरिंग और सब्सिडी की कागज़ी कार्यवाही हम करते हैं। अपना सिस्टम साइज़ या महीने की यूनिट बताइए, मैं अनुमान बता दूँगा।",
+      "Under **PM Surya Ghar Muft Bijli Yojana**, the total subsidy (central + state) goes up to **₹85,800** for a **3 kW or bigger** system. For example, about **₹33,000** for 1 kW and **₹66,000** for 2 kW. We handle registration, DISCOM approval, net-metering and the subsidy paperwork. Tell me your system size or monthly units and I'll estimate it.",
+      "**पीएम सूर्य घर मुफ़्त बिजली योजना** में **3 kW या उससे बड़े** सिस्टम पर कुल सब्सिडी (केंद्र + राज्य) **₹85,800** तक है। जैसे 1 kW पर लगभग **₹33,000** और 2 kW पर **₹66,000**। रजिस्ट्रेशन, बिजली विभाग की मंज़ूरी, नेट-मीटरिंग और सब्सिडी की कागज़ी कार्यवाही हम करते हैं। अपना सिस्टम साइज़ या महीने की यूनिट बताइए, मैं अनुमान बता दूँगा।",
     );
   }
   if (has(t, ["finance", "emi", "loan", "फ़ाइनेंस", "फाइनेंस", "किस्त", "kisht", "down payment", "डाउन"])) {

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { MapPin, Navigation, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Navigation, Phone, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { Certifications } from "../components/Certifications";
 import { WhatsAppIcon } from "../components/Chrome";
 import { Img } from "../components/Img";
 import { Reveal, SectionHeading, SpotlightCard } from "../components/motion";
@@ -9,7 +10,7 @@ import { accent } from "../components/sections";
 import { WordReveal } from "../components/motion";
 import { branches, brand, ui, verticals, type VerticalKey } from "../data/content";
 import { useLang } from "../lib/i18n";
-import { MAPS_LINK, PHONE, cn, telLink, waLink } from "../lib/utils";
+import { EMAIL, MAPS_LINK, PHONE, PHONE2, cn, mailLink, tel2Link, telLink, waLink } from "../lib/utils";
 
 export default function Contact() {
   const { t, lang } = useLang();
@@ -48,17 +49,16 @@ export default function Contact() {
       <section className="container-x grid gap-6 py-12 lg:grid-cols-[1fr_1.2fr]">
         <div className="grid gap-4">
           <Reveal>
-            <a href={telLink} className="block">
-              <SpotlightCard className="p-6">
-                <div className="flex items-center gap-4">
-                  <span className="grid h-14 w-14 place-items-center rounded-2xl bg-sun-400 text-ink-950"><Phone /></span>
-                  <div>
-                    <p className="text-sm text-white/55">{t(ui.cta.call)}</p>
-                    <p className="font-display text-2xl font-bold">{PHONE}</p>
-                  </div>
+            <SpotlightCard className="p-6">
+              <div className="flex items-center gap-4">
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-sun-400 text-ink-950"><Phone /></span>
+                <div className="min-w-0">
+                  <p className="text-sm text-white/55">{t(ui.cta.call)}</p>
+                  <a href={telLink} className="block font-display text-2xl font-bold hover:text-sun-300">{PHONE}</a>
+                  <a href={tel2Link} className="block font-display text-lg font-semibold text-white/75 hover:text-sun-300">{PHONE2}</a>
                 </div>
-              </SpotlightCard>
-            </a>
+              </div>
+            </SpotlightCard>
           </Reveal>
           <Reveal delay={0.08}>
             <a href={waLink()} target="_blank" rel="noreferrer" className="block">
@@ -68,6 +68,19 @@ export default function Contact() {
                   <div>
                     <p className="text-sm text-white/55">WhatsApp</p>
                     <p className="font-display text-2xl font-bold">{PHONE}</p>
+                  </div>
+                </div>
+              </SpotlightCard>
+            </a>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <a href={mailLink} className="block">
+              <SpotlightCard className="p-6">
+                <div className="flex items-center gap-4">
+                  <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white/10 text-sun-300"><Mail /></span>
+                  <div className="min-w-0">
+                    <p className="text-sm text-white/55">Email</p>
+                    <p className="break-all font-display text-lg font-bold sm:text-xl">{EMAIL}</p>
                   </div>
                 </div>
               </SpotlightCard>
@@ -122,6 +135,8 @@ export default function Contact() {
           </form>
         </Reveal>
       </section>
+
+      <Certifications />
 
       <section className="container-x py-24">
         <SectionHeading eyebrow={L("Branches", "शाखाएँ")} title={L("Find us across Kumaon & Terai", "कुमाऊँ और तराई में हमें खोजें")} />
