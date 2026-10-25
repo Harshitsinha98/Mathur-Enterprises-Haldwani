@@ -4,6 +4,7 @@ import { Img } from "../components/Img";
 import { Certifications } from "../components/Certifications";
 import { Faq } from "../components/Faq";
 import { Hero } from "../components/Hero";
+import { StoryTeaser } from "../components/StoryTeaser";
 import { Counter, Reveal, SectionHeading, SpotlightCard } from "../components/motion";
 import { BrandMarquee, CtaBand, ExploreLink, GhostButton, HorizontalScroller, PrimaryButton, TeamCard, VerticalCards } from "../components/sections";
 import { awards, branches, brand, home, installations, moments, team, ui } from "../data/content";
@@ -141,7 +142,7 @@ function Awards() {
 
 function TeamPreview() {
   const { t } = useLang();
-  const ceo = team[0].members[0];
+  const leaders = team[0].members;
   const heads = team[1].members;
   return (
     <section className="relative py-24 sm:py-32">
@@ -152,12 +153,14 @@ function TeamPreview() {
             <ExploreLink to="/team">{t(ui.cta.viewAll)}</ExploreLink>
           </Reveal>
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          <Reveal className="sm:col-span-2 lg:col-span-1 lg:row-span-1">
-            <TeamCard m={ceo} featured />
-          </Reveal>
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-6">
+          {leaders.map((m, i) => (
+            <Reveal key={m.name} delay={0.08 * i}>
+              <TeamCard m={m} highlight />
+            </Reveal>
+          ))}
           {heads.map((m, i) => (
-            <Reveal key={m.name} delay={0.08 * (i + 1)}>
+            <Reveal key={m.name} delay={0.08 * (i + leaders.length)}>
               <TeamCard m={m} />
             </Reveal>
           ))}
@@ -184,8 +187,8 @@ function Identity() {
             title={t(brand.promise)}
             body={
               lang === "hi"
-                ? "एक छोटी सी दुकान से शुरू होकर आज माथुर एंटरप्राइजेज़ हल्द्वानी, काशीपुर, लालकुआँ, पंतनगर, हल्दूचौड़, जय नगर और किच्छा में फैला है।"
-                : "What began as a single counter in Haldwani is today a network across Haldwani, Kashipur, Lalkuan, Pantnagar, Halduchaur, Jay Nagar and Kichha."
+                ? "2005 में लालकुआँ की एक छोटी-सी साइकिल की दुकान से शुरू हुआ सफर आज हल्द्वानी, काशीपुर, लालकुआँ, पंतनगर, हल्दूचौड़, जय नगर और किच्छा तक फैला है।"
+                : "A journey that began in 2005 at a small cycle shop in Lalkuan now spans Haldwani, Kashipur, Lalkuan, Pantnagar, Halduchaur, Jay Nagar and Kichha."
             }
           />
           <Reveal delay={0.2} className="mt-8 grid grid-cols-2 gap-3">
@@ -252,6 +255,7 @@ export default function Home() {
       </section>
       <Awards />
       <Identity />
+      <StoryTeaser />
       <TeamPreview />
       <BranchStrip />
       <Certifications />

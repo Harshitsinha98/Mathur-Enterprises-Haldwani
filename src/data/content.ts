@@ -9,6 +9,7 @@ export const ui = {
     solar: { en: "Solar", hi: "सोलर" },
     rajhans: { en: "Rajhans EV", hi: "राजहंस EV" },
     okaya: { en: "Okaya", hi: "ओकाया" },
+    story: { en: "Our Story", hi: "हमारी कहानी" },
     team: { en: "Team", hi: "टीम" },
     contact: { en: "Contact", hi: "संपर्क" },
   },
@@ -40,7 +41,9 @@ export const ui = {
 /* ------------------------------------------------------------------ */
 export const brand = {
   name: "Mathur Enterprises",
-  since: 2015,
+  since: 2018,
+  /** Year the founder's journey began (cycle shop, Lalkuan). */
+  journeyStart: 2005,
   tagline: { en: "Powering Your Tomorrow", hi: "आपके कल को ऊर्जा" },
   promise: { en: "Your trusted partner for a brighter tomorrow", hi: "उज्ज्वल कल के लिए आपका भरोसेमंद साथी" },
   address: {
@@ -59,7 +62,7 @@ export const brand = {
 /*  Home                                                               */
 /* ------------------------------------------------------------------ */
 export const home = {
-  eyebrow: { en: "Haldwani · Since 2015", hi: "हल्द्वानी · 2015 से" },
+  eyebrow: { en: "Haldwani · Since 2018", hi: "हल्द्वानी · 2018 से" },
   title: [
     { en: "Powering", hi: "ऊर्जा दे रहे हैं" },
     { en: "Uttarakhand's", hi: "उत्तराखंड के" },
@@ -70,7 +73,7 @@ export const home = {
     hi: "रूफटॉप सोलर, राजहंस इलेक्ट्रिक रिक्शा और ओकाया पावर बैकअप: तीन भरोसेमंद व्यवसाय, एक नाम, कुमाऊँ और पश्चिमी यूपी की सेवा में।",
   },
   stats: [
-    { value: 2015, label: { en: "Serving since", hi: "सेवा में, वर्ष से" }, plain: true },
+    { value: 2018, label: { en: "Serving since", hi: "सेवा में, वर्ष से" }, plain: true },
     { value: 7, suffix: "+", label: { en: "Branches & showrooms", hi: "शाखाएँ और शोरूम" } },
     { value: 15, suffix: "+", label: { en: "Towns with our solar", hi: "शहरों में हमारा सोलर" } },
     { value: 20, suffix: "+", label: { en: "Team members", hi: "टीम सदस्य" } },
@@ -136,8 +139,8 @@ export const home = {
   teamEyebrow: { en: "The people", hi: "हमारे लोग" },
   teamTitle: { en: "A team that shows up", hi: "हर वक़्त साथ खड़ी टीम" },
   teamBody: {
-    en: "20+ people across sales, installation, service and accounts, led by CEO Aakash Mathur.",
-    hi: "सेल्स, इंस्टॉलेशन, सर्विस और अकाउंट्स में 20+ लोग, CEO आकाश माथुर के नेतृत्व में।",
+    en: "20+ people across sales, installation, service and accounts, led by Director Aakash Mathur and CEO Kapil Mathur.",
+    hi: "सेल्स, इंस्टॉलेशन, सर्विस और अकाउंट्स में 20+ लोग, डायरेक्टर आकाश माथुर और CEO कपिल माथुर के नेतृत्व में।",
   },
   ctaTitle: { en: "Ready to cut your electricity bill?", hi: "बिजली का बिल घटाने के लिए तैयार हैं?" },
   ctaBody: {
@@ -393,8 +396,8 @@ export const teamPage = {
   eyebrow: { en: "Our team", hi: "हमारी टीम" },
   title: { en: "The people powering Mathur Enterprises", hi: "माथुर एंटरप्राइजेज़ को चलाने वाले लोग" },
   sub: {
-    en: "From the CEO's desk to the rooftop, meet the team behind every installation and every delivery.",
-    hi: "CEO की मेज़ से छत तक, हर इंस्टॉलेशन और हर डिलीवरी के पीछे की टीम से मिलें।",
+    en: "From the leadership desk to the rooftop, meet the team behind every installation and every delivery.",
+    hi: "नेतृत्व की मेज़ से छत तक, हर इंस्टॉलेशन और हर डिलीवरी के पीछे की टीम से मिलें।",
   },
 };
 
@@ -402,7 +405,8 @@ export const team: Tier[] = [
   {
     title: { en: "Leadership", hi: "नेतृत्व" },
     members: [
-      { name: "Aakash Mathur", nameHi: "आकाश माथुर", role: { en: "CEO, Mathur Enterprises", hi: "CEO, माथुर एंटरप्राइजेज़" }, photo: "team-aakash-mathur" },
+      { name: "Aakash Mathur", nameHi: "आकाश माथुर", role: { en: "Director, Mathur Enterprises", hi: "डायरेक्टर, माथुर एंटरप्राइजेज़" }, photo: "team-aakash-mathur" },
+      { name: "Kapil Mathur", nameHi: "कपिल माथुर", role: { en: "CEO, Mathur Enterprises", hi: "CEO, माथुर एंटरप्राइजेज़" }, photo: "team-kapil-mathur" },
     ],
   },
   {

@@ -3,7 +3,7 @@ export const routeMeta: Record<string, { title: string; description: string; pri
   "/": {
     title: "Mathur Enterprises Haldwani | Rooftop Solar, Rajhans E-Rickshaw & Okaya Batteries",
     description:
-      "Mathur Enterprises, Haldwani (since 2015): rooftop solar with PM Surya Ghar subsidy up to ₹85,800, authorised Rajhans e-rickshaw dealer (Haldwani & Kichha) and Okaya inverter & battery distributor across Uttarakhand & UP.",
+      "Mathur Enterprises, Haldwani (since 2018): rooftop solar with PM Surya Ghar subsidy up to ₹85,800, authorised Rajhans e-rickshaw dealer (Haldwani & Kichha) and Okaya inverter & battery distributor across Uttarakhand & UP.",
     priority: 1.0,
   },
   "/solar": {
@@ -24,9 +24,15 @@ export const routeMeta: Record<string, { title: string; description: string; pri
       "Authorised Okaya distributor in Haldwani: tubular inverter batteries, inverters & home UPS, solar inverters, solar batteries and e-rickshaw batteries. Dealer enquiries welcome.",
     priority: 0.8,
   },
+  "/story": {
+    title: "Our Story: From a Cycle Shop in Lalkuan (2005) to Mathur Enterprises | Haldwani",
+    description:
+      "The journey of Mathur Enterprises: a cycle shop in Lalkuan in 2005, e-rickshaws from 2016, Mathur Enterprises in 2018, electronics in Haldwani in 2019 and rooftop solar under PM Surya Ghar from 2024.",
+    priority: 0.7,
+  },
   "/team": {
     title: "Our Team | Mathur Enterprises, Haldwani",
-    description: "Meet CEO Aakash Mathur and the sales, solar installation, service and accounts team of Mathur Enterprises across Uttarakhand and UP.",
+    description: "Meet Director Aakash Mathur, CEO Kapil Mathur and the sales, solar installation, service and accounts team of Mathur Enterprises across Uttarakhand and UP.",
     priority: 0.5,
   },
   "/contact": {

@@ -13,6 +13,7 @@ import { branches, brand, home, installations, okaya, rajhans, solar, team, vert
 import { business } from "../src/data/business.ts";
 import { faqs } from "../src/data/faq.ts";
 import { routeMeta } from "../src/data/seo.ts";
+import { story } from "../src/data/story.ts";
 
 const DIST = path.resolve(import.meta.dirname, "..", "dist");
 const SITE = (
@@ -42,7 +43,8 @@ const localBusiness = {
   telephone: PHONE,
   email: EMAIL,
   foundingDate: String(brand.since),
-  founder: { "@type": "Person", name: business.owner, jobTitle: "CEO" },
+  founder: { "@type": "Person", name: business.owner, jobTitle: "Director" },
+  employee: [{ "@type": "Person", name: "Kapil Mathur", jobTitle: "CEO" }],
   ...(business.gstin ? { taxID: business.gstin, vatID: business.gstin } : {}),
   ...(business.udyam ? { identifier: { "@type": "PropertyValue", propertyID: "Udyam Registration Number", value: business.udyam } } : {}),
   address: {
@@ -103,6 +105,10 @@ ${verticals.map((v) => `<h2><a href="${v.path}">${esc(v.name.en)}</a></h2><p>${e
 <h2>${esc(rajhans.benefitsTitle.en)}</h2>${li(rajhans.benefits.map((b) => `${b.title.en}: ${b.body.en}`))}<h2>${esc(rajhans.scootyTitle.en)}</h2><p>${esc(rajhans.scootyBody.en)}</p>${contactBlock}`,
   "/okaya": `<h1>${esc(okaya.title.en)}</h1><p>${esc(okaya.sub.en)}</p><h2>${esc(okaya.productsTitle.en)}</h2>${li(okaya.products.map((p) => `${p.title.en}: ${p.body.en}`))}
 <h2>${esc(okaya.dealerTitle.en)}</h2><p>${esc(okaya.dealerBody.en)}</p>${contactBlock}`,
+  "/story": `<h1>${esc(story.title.en)}</h1><blockquote>${esc(story.quote.en)}</blockquote><p>${esc(story.intro.en)}</p>
+${story.chapters.map((c) => `<h2>${esc(c.year)}: ${esc(c.title.en)}</h2><p>${esc(c.body.en)}${c.highlight ? " " + esc(c.highlight.en) : ""}</p>`).join("")}
+<h2>${esc(story.letterTitle.en)}</h2>${story.letter.map((p) => `<p>${esc(p.en)}</p>`).join("")}<p>${esc(story.belief.en)}</p><p>${esc(story.ahead.en)}</p>
+<p>${esc(story.signoff.en)} ${esc(story.author.en)}, ${esc(story.authorRole.en)}.</p><p>${esc(story.motto.en)}</p>`,
   "/team": `<h1>Team of Mathur Enterprises</h1>${team.map((tier) => `<h2>${esc(tier.title.en)}</h2>${li(tier.members.map((m) => `${m.name}, ${m.role.en}`))}`).join("")}`,
   "/contact": `<h1>Contact Mathur Enterprises, Haldwani</h1>${contactBlock}<h2>Branches</h2>${li(branches.map((b) => `${b.name.en}: ${b.area.en}`))}`,
   "/privacy": `<h1>Privacy Policy</h1><p>${esc(routeMeta["/privacy"].description)}</p>`,
@@ -171,7 +177,7 @@ fs.writeFileSync(
 
 > ${routeMeta["/"].description}
 
-- Founded: ${brand.since}. CEO: ${business.owner}.
+- Founded: ${brand.since} (founder's journey began in ${brand.journeyStart}). Director: ${business.owner}. CEO: Kapil Mathur.
 - Address: ${business.address} (opp. Shri Balaji Honda Showroom).
 - Phone/WhatsApp: ${PHONE} · Phone: ${PHONE2} · Email: ${EMAIL}
 - Branches: ${branches.map((b) => b.name.en).join(", ")}.

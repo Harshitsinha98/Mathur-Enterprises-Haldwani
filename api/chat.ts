@@ -16,7 +16,8 @@ const PHONE2 = "+91 90847 35451";
 const EMAIL = "Aakashmathur3@gmail.com";
 
 const KNOWLEDGE = `
-BUSINESS: Mathur Enterprises, Haldwani, Uttarakhand (since 2015). CEO: Aakash Mathur.
+BUSINESS: Mathur Enterprises, Haldwani, Uttarakhand (founded 2018). Director: Aakash Mathur. CEO: Kapil Mathur.
+STORY: Journey began in 2005 with a small cycle shop in Lalkuan; 2014 job at UNO MINDA, Rudrapur; 2016 started e-rickshaw work with Choudhary Enterprises; 2018 founded Mathur Enterprises (e-rickshaw showroom, sales & service); 2019 electronics showroom in Haldwani (Electronics Bazar); 2020 Covid challenge; after 2020 grew the e-rickshaw business; 2024 entered solar under PM Surya Ghar Muft Bijli Yojana. Motto: "आपका विश्वास, हमारी पहचान" (Your trust, our identity).
 Head office: 42, Rudrapur–Haldwani Road, Dahariya, Haldwani 263139 (opp. Shri Balaji Honda Showroom). Phone/WhatsApp: ${PHONE}. Second phone: ${PHONE2}. Email: ${EMAIL}.
 Branches: Haldwani HQ (Haldwani Solar House & E-Scooty Showroom), Kashipur Solar House, Lalkuan Solar House (Sanjay Nagar), Pantnagar, Halduchaur, Jay Nagar Solar House, Kichha (Rajhans Auto Agency). Solar advisors also cover Dist. Nainital and Bareilly.
 Exact branch addresses other than HQ and showroom timings are NOT known: ask the user to call or WhatsApp.
@@ -39,7 +40,7 @@ Exact branch addresses other than HQ and showroom timings are NOT known: ask the
  - Products: tubular inverter batteries, inverters & home UPS (pure sine wave), solar inverters & PCU, solar batteries (deep-cycle), e-rickshaw batteries, Okaya solar rooftop kits.
  - Dealership: genuine stock with warranty, fast local replenishment, claim & service support, marketing material.
 
-TEAM (public): Sunil Kumar Diwakar (Sales Manager UK & UP), Dharmveer Singh Mourya (Head of Sales, E-Rickshaw & E-Scooty), Rohit Sharma (Service Head), Ankit Diwakar (Solar Plant Installation Head), Bagwati Chouhan (Manager, Haldwani), Ravi Sharma (Manager, Kashipur Solar House), Darwara Singh (Branch Manager, Kashipur), Anuj Sharma (Branch Manager, Lalkuan Solar House), Amit Diwakar (Branch Manager, Pantnagar), Sanjay Choudhary (Branch Manager, Halduchaur), Lakhan Singh Bisht (Sales Manager, Dist. Nainital), solar advisors Naitik Gurung (Haldwani), Rahul Goswami (Haldwani), Shashi Kohli (Dist. Nainital), Vivek Kumar (Kashipur), Rishabh Bhatnagar (Bareilly), service engineers Parmod Kumar and Anirudh Tripathi, accountant: Prakash Chandra Melkani.
+TEAM (public): Aakash Mathur (Director), Kapil Mathur (CEO), Sunil Kumar Diwakar (Sales Manager UK & UP), Dharmveer Singh Mourya (Head of Sales, E-Rickshaw & E-Scooty), Rohit Sharma (Service Head), Ankit Diwakar (Solar Plant Installation Head), Bagwati Chouhan (Manager, Haldwani), Ravi Sharma (Manager, Kashipur Solar House), Darwara Singh (Branch Manager, Kashipur), Anuj Sharma (Branch Manager, Lalkuan Solar House), Amit Diwakar (Branch Manager, Pantnagar), Sanjay Choudhary (Branch Manager, Halduchaur), Lakhan Singh Bisht (Sales Manager, Dist. Nainital), solar advisors Naitik Gurung (Haldwani), Rahul Goswami (Haldwani), Shashi Kohli (Dist. Nainital), Vivek Kumar (Kashipur), Rishabh Bhatnagar (Bareilly), service engineers Parmod Kumar and Anirudh Tripathi, accountant: Prakash Chandra Melkani.
 
 RECOGNITION: REDA RenewX 2026 (Renewable Energy Development Association, Uttarakhand), Uttarakhand 2047 conference, Havells Certificate of Appreciation, LUNO Solarpreneur.
 `.trim();

@@ -54,6 +54,7 @@ export function Footer() {
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">{t(ui.footer.company)}</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
+            <li><Link to="/story" className="text-white/70 hover:text-white">{t(ui.nav.story)}</Link></li>
             <li><Link to="/team" className="text-white/70 hover:text-white">{t(ui.nav.team)}</Link></li>
             <li><Link to="/contact" className="text-white/70 hover:text-white">{t(ui.nav.contact)}</Link></li>
             <li><Link to="/privacy" className="text-white/70 hover:text-white">Privacy Policy</Link></li>
