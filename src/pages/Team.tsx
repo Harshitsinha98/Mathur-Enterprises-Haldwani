@@ -43,7 +43,7 @@ export default function Team() {
               viewport={{ once: true, margin: "-60px" }}
               className={
                 ti === 0
-                  ? "mx-auto grid max-w-sm"
+                  ? "mx-auto grid max-w-3xl gap-5 sm:grid-cols-2"
                   : "grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4"
               }
             >

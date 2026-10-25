@@ -22,11 +22,15 @@ let made = 0, kept = 0;
 const missing = [];
 
 for (const [id, rel] of Object.entries(MAP)) {
-  const src = path.join(ROOT, rel);
+  // Accept the same file name with a different extension (.jpg / .jpeg / .png / .webp, any case).
+  const base = rel.replace(/\.(jpe?g|png|webp)$/i, "");
+  const candidates = [rel, ...["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG"].map((e) => `${base}.${e}`)];
   let buf;
-  try {
-    buf = await fs.readFile(src);
-  } catch {
+  for (const c of candidates) {
+    buf = await fs.readFile(path.join(ROOT, c)).catch(() => undefined);
+    if (buf) break;
+  }
+  if (!buf) {
     missing.push(`${id} → ${rel}`);
     continue;
   }

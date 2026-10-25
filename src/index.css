@@ -199,3 +199,9 @@ html[lang="hi"] [class*="tracking-"]:not(.font-logo) {
 @media (prefers-reduced-motion: reduce) {
   .ifx-letter, .ifx-mark-fill, .ifx-mark-comet { animation: none; }
 }
+
+/* Outlined display numerals (story timeline) */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(255 255 255 / 0.28);
+}
