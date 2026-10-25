@@ -84,34 +84,35 @@ function StoryHero() {
           </motion.p>
         </div>
 
-        {/* the two brothers, with a turning ring of sun rays */}
-        <motion.figure initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 1 }} className="relative mx-auto w-72 pb-10 sm:w-96">
-          <div aria-hidden className="absolute inset-x-6 -top-8 bottom-2 animate-spin-slow rounded-full bg-[repeating-conic-gradient(from_0deg,rgba(255,194,26,0.35)_0deg_3deg,transparent_3deg_14deg)] [mask-image:radial-gradient(circle,transparent_52%,black_56%,transparent_72%)]" />
-          <div aria-hidden className="absolute -inset-2 rounded-full bg-sun-400/20 blur-3xl" />
-          <div className="relative flex items-end justify-center">
+        {/* the two brothers: side by side, each with its own name */}
+        <motion.figure initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 1 }} className="relative mx-auto max-w-md">
+          <div aria-hidden className="absolute left-1/2 top-1/3 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sun-400/20 blur-3xl" />
+          <div className="relative grid grid-cols-2 gap-4 sm:gap-6">
             {story.authors.map((a, i) => (
               <motion.div
                 key={a.photo}
-                initial={{ opacity: 0, x: i === 0 ? 30 : -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 + i * 0.15, duration: 0.8 }}
-                className={cn(
-                  "relative aspect-square w-40 overflow-hidden rounded-full border-4 shadow-2xl sm:w-52",
-                  i === 0 ? "z-10 border-sun-400/70" : "-ml-10 mb-4 border-white/15 sm:-ml-14",
-                )}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + i * 0.15, duration: 0.7 }}
+                className="flex flex-col items-center text-center"
               >
-                <Img id={a.photo} alt={t(a.name)} eager sizes="220px" className="h-full w-full object-cover" />
+                <div className="group relative aspect-square w-full max-w-[11rem] overflow-hidden rounded-[1.75rem] border border-white/10 shadow-2xl shadow-black/50">
+                  <Img id={a.photo} alt={t(a.name)} eager sizes="200px" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <span aria-hidden className="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-inset ring-sun-400/30" />
+                  <span className="absolute left-3 top-3 rounded-full bg-ink-950/70 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-sun-300 backdrop-blur">
+                    {t(a.role).split(",")[0]}
+                  </span>
+                </div>
+                <p className="mt-3 font-display text-base font-bold leading-tight sm:text-lg">{t(a.name)}</p>
+                <p className="text-[11px] text-white/50">{t(a.role)}</p>
               </motion.div>
             ))}
           </div>
-          <figcaption className="glass absolute bottom-0 left-1/2 w-max max-w-[95%] -translate-x-1/2 rounded-2xl px-5 py-2 text-center">
-            {story.authors.map((a) => (
-                <span key={a.photo} className="inline-flex flex-col px-2 align-top">
-                <span className="font-display text-sm font-bold">{t(a.name)}</span>
-                <span className="text-[10px] text-white/55">{t(a.role)}</span>
-              </span>
-            ))}
-            <span className="mt-1 block text-[11px] font-semibold text-sun-300">{t(story.signByRole)}</span>
+          <figcaption className="mt-5 flex justify-center">
+            <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold text-sun-300">
+              <Heart className="h-3.5 w-3.5 fill-raj-400 text-raj-400" />
+              {t(story.signByRole)}
+            </span>
           </figcaption>
         </motion.figure>
       </div>
