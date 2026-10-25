@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { story } from "../data/story";
 import { useLang } from "../lib/i18n";
+import { cn } from "../lib/utils";
 import { Img } from "./Img";
 import { Reveal } from "./motion";
 import { PrimaryButton } from "./sections";
@@ -16,11 +17,15 @@ export function StoryTeaser() {
         <div aria-hidden className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-sun-500/15 blur-3xl" />
         <div className="relative grid items-center gap-10 lg:grid-cols-[auto_1fr]">
           <Reveal className="mx-auto">
-            <div className="relative h-44 w-44 sm:h-56 sm:w-56">
-              <div aria-hidden className="absolute -inset-3 animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,#FFC21A,#4FD97A,#FF5A5F,#FFC21A)] opacity-70 blur-[2px] [animation-duration:12s]" />
-              <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-ink-950">
-                <Img id={story.authorPhoto} alt={t(story.author)} sizes="224px" className="h-full w-full object-cover" />
-              </div>
+            <div className="flex items-center">
+              {story.authors.map((a, i) => (
+                <div key={a.photo} className={cn("relative h-36 w-36 sm:h-44 sm:w-44", i === 1 && "-ml-8 sm:-ml-10")}>
+                  <div aria-hidden className={cn("absolute -inset-2 rounded-full blur-[2px] opacity-70", i === 0 ? "animate-spin-slow bg-[conic-gradient(from_0deg,#FFC21A,#4FD97A,#FF5A5F,#FFC21A)] [animation-duration:12s]" : "bg-white/10")} />
+                  <div className={cn("relative h-full w-full overflow-hidden rounded-full border-4 border-ink-950", i === 1 && "z-10")}>
+                    <Img id={a.photo} alt={t(a.name)} sizes="176px" className="h-full w-full object-cover" />
+                  </div>
+                </div>
+              ))}
             </div>
           </Reveal>
           <div>
