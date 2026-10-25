@@ -3,7 +3,7 @@ export const routeMeta: Record<string, { title: string; description: string; pri
   "/": {
     title: "Mathur Enterprises Haldwani | Rooftop Solar, Rajhans E-Rickshaw & Okaya Batteries",
     description:
-      "Mathur Enterprises, Haldwani (since 2018): rooftop solar with PM Surya Ghar subsidy up to ₹85,800, authorised Rajhans e-rickshaw dealer (Haldwani & Kichha) and Okaya inverter & battery distributor across Uttarakhand & UP.",
+      "Mathur Enterprises, Haldwani (since 2015): rooftop solar with PM Surya Ghar subsidy up to ₹85,800, authorised Rajhans e-rickshaw dealer (Haldwani & Kichha) and Okaya inverter & battery distributor across Uttarakhand & UP.",
     priority: 1.0,
   },
   "/solar": {

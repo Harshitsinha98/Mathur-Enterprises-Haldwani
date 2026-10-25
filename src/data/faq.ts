@@ -5,8 +5,8 @@ export const faqs: { q: L; a: L }[] = [
   {
     q: { en: "Who installs rooftop solar in Haldwani?", hi: "हल्द्वानी में रूफटॉप सोलर कौन लगाता है?" },
     a: {
-      en: "Mathur Enterprises (Haldwani Solar House) at Dahariya, Haldwani has served the region since 2018 and has installed rooftop solar since 2024. Its own installation team covers Haldwani, Kashipur, Lalkuan, Rudrapur, Pantnagar, Halduchaur and Bareilly, from free site survey to net-metering.",
-      hi: "दहरिया, हल्द्वानी स्थित माथुर एंटरप्राइजेज़ (हल्द्वानी सोलर हाउस) 2018 से इस क्षेत्र की सेवा कर रहा है और 2024 से रूफटॉप सोलर लगा रहा है। इसकी अपनी इंस्टॉलेशन टीम हल्द्वानी, काशीपुर, लालकुआँ, रुद्रपुर, पंतनगर, हल्दूचौड़ और बरेली में मुफ़्त सर्वे से नेट-मीटरिंग तक का काम करती है।",
+      en: "Mathur Enterprises (Haldwani Solar House) at Dahariya, Haldwani has served the region since 2015 and has installed rooftop solar since 2024. Its own installation team covers Haldwani, Kashipur, Lalkuan, Rudrapur, Pantnagar, Halduchaur and Bareilly, from free site survey to net-metering.",
+      hi: "दहरिया, हल्द्वानी स्थित माथुर एंटरप्राइजेज़ (हल्द्वानी सोलर हाउस) 2015 से इस क्षेत्र की सेवा कर रहा है और 2024 से रूफटॉप सोलर लगा रहा है। इसकी अपनी इंस्टॉलेशन टीम हल्द्वानी, काशीपुर, लालकुआँ, रुद्रपुर, पंतनगर, हल्दूचौड़ और बरेली में मुफ़्त सर्वे से नेट-मीटरिंग तक का काम करती है।",
     },
   },
   {

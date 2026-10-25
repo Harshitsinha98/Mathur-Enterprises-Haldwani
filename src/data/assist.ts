@@ -44,12 +44,12 @@ export const heroSlides: Record<VerticalKey, { word: L; line: L; cta: L; image: 
 };
 
 export const heroText = {
-  eyebrow: { en: "Haldwani · Since 2018", hi: "हल्द्वानी · 2018 से" },
+  eyebrow: { en: "Haldwani · Since 2015", hi: "हल्द्वानी · 2015 से" },
   powering: { en: "Powering", hi: "को ऊर्जा," },
   across: { en: "across Uttarakhand.", hi: "पूरे उत्तराखंड में।" },
   explore: { en: "Explore", hi: "देखें" },
   facts: [
-    { en: "Since 2018", hi: "2018 से" },
+    { en: "Since 2015", hi: "2015 से" },
     { en: "7+ branches", hi: "7+ शाखाएँ" },
     { en: "20+ team", hi: "20+ टीम" },
   ] as L[],

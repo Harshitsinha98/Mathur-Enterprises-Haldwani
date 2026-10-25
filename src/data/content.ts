@@ -41,7 +41,7 @@ export const ui = {
 /* ------------------------------------------------------------------ */
 export const brand = {
   name: "Mathur Enterprises",
-  since: 2018,
+  since: 2015,
   /** Year the founder's journey began (cycle shop, Lalkuan). */
   journeyStart: 2005,
   tagline: { en: "Powering Your Tomorrow", hi: "आपके कल को ऊर्जा" },
@@ -62,7 +62,7 @@ export const brand = {
 /*  Home                                                               */
 /* ------------------------------------------------------------------ */
 export const home = {
-  eyebrow: { en: "Haldwani · Since 2018", hi: "हल्द्वानी · 2018 से" },
+  eyebrow: { en: "Haldwani · Since 2015", hi: "हल्द्वानी · 2015 से" },
   title: [
     { en: "Powering", hi: "ऊर्जा दे रहे हैं" },
     { en: "Uttarakhand's", hi: "उत्तराखंड के" },
@@ -73,7 +73,7 @@ export const home = {
     hi: "रूफटॉप सोलर, राजहंस इलेक्ट्रिक रिक्शा और ओकाया पावर बैकअप: तीन भरोसेमंद व्यवसाय, एक नाम, कुमाऊँ और पश्चिमी यूपी की सेवा में।",
   },
   stats: [
-    { value: 2018, label: { en: "Serving since", hi: "सेवा में, वर्ष से" }, plain: true },
+    { value: 2015, label: { en: "Serving since", hi: "सेवा में, वर्ष से" }, plain: true },
     { value: 7, suffix: "+", label: { en: "Branches & showrooms", hi: "शाखाएँ और शोरूम" } },
     { value: 15, suffix: "+", label: { en: "Towns with our solar", hi: "शहरों में हमारा सोलर" } },
     { value: 20, suffix: "+", label: { en: "Team members", hi: "टीम सदस्य" } },
