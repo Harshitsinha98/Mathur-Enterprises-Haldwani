@@ -1,4 +1,4 @@
-import { Play, Video } from "lucide-react";
+import { Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Gallery } from "../components/Gallery";
 import { Reveal, SectionHeading } from "../components/motion";
