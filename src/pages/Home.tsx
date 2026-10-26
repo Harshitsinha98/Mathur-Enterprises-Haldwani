@@ -253,6 +253,11 @@ export default function Home() {
         </div>
         <HorizontalScroller items={moments.map((m) => ({ id: m.id, caption: t(m.caption) }))} />
       </section>
+      <section className="container-x pb-10 text-center">
+        <Link to="/media" className="inline-flex items-center gap-2 rounded-full border border-sun-400/30 px-5 py-3 text-sm font-semibold text-sun-300 transition hover:bg-sun-400/10">
+          {t({ en: "Explore the new photo & video collection", hi: "नई फोटो और वीडियो गैलरी देखें" })} <ArrowRight className="h-4 w-4" />
+        </Link>
+      </section>
       <Awards />
       <Identity />
       <StoryTeaser />
