@@ -17,6 +17,7 @@ const Okaya = lazy(() => import("./pages/Okaya"));
 const Team = lazy(() => import("./pages/Team"));
 const Story = lazy(() => import("./pages/Story"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Media = lazy(() => import("./pages/Media"));
 const Privacy = lazy(() => import("./pages/Legal").then((m) => ({ default: m.Privacy })));
 const Terms = lazy(() => import("./pages/Legal").then((m) => ({ default: m.Terms })));
 
@@ -97,6 +98,7 @@ function AnimatedRoutes() {
             <Route path="/story" element={<Story />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/media" element={<Media />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />
