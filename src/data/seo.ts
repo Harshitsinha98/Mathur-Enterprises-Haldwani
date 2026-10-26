@@ -35,6 +35,11 @@ export const routeMeta: Record<string, { title: string; description: string; pri
     description: "Meet Director Aakash Mathur, CEO Kapil Mathur and the sales, solar installation, service and accounts team of Mathur Enterprises across Uttarakhand and UP.",
     priority: 0.5,
   },
+  "/media": {
+    title: "Photo & Video Gallery | Mathur Enterprises Haldwani",
+    description: "Explore photos and videos from Mathur Enterprises, Haldwani, including company events, solar installations, EV deliveries and team moments.",
+    priority: 0.5,
+  },
   "/contact": {
     title: "Contact Mathur Enterprises Haldwani | +91 93687 80920",
     description:
