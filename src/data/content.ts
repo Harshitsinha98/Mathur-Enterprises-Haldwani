@@ -73,10 +73,10 @@ export const home = {
     hi: "रूफटॉप सोलर, राजहंस इलेक्ट्रिक रिक्शा और ओकाया पावर बैकअप: तीन भरोसेमंद व्यवसाय, एक नाम, कुमाऊँ और पश्चिमी यूपी की सेवा में।",
   },
   stats: [
-    { value: 2015, label: { en: "Serving since", hi: "सेवा में, वर्ष से" }, plain: true },
-    { value: 7, suffix: "+", label: { en: "Branches & showrooms", hi: "शाखाएँ और शोरूम" } },
-    { value: 15, suffix: "+", label: { en: "Towns with our solar", hi: "शहरों में हमारा सोलर" } },
-    { value: 20, suffix: "+", label: { en: "Team members", hi: "टीम सदस्य" } },
+    { value: 10000, suffix: "+", label: { en: "E-scooty sold", hi: "ई-स्कूटी बिक्री" } },
+    { value: 3000, suffix: "+", label: { en: "E-rickshaws sold", hi: "ई-रिक्शा बिक्री" } },
+    { value: 3000, suffix: "+", label: { en: "PM Surya Ghar applications", hi: "पीएम सूर्य घर आवेदन" } },
+    { value: 100, suffix: "+", label: { en: "Team members", hi: "टीम सदस्य" } },
   ],
   verticalsEyebrow: { en: "Three businesses", hi: "तीन व्यवसाय" },
   verticalsTitle: { en: "One name you can trust for clean energy and electric mobility", hi: "स्वच्छ ऊर्जा और इलेक्ट्रिक सफ़र के लिए एक भरोसेमंद नाम" },
@@ -209,7 +209,7 @@ export const verticals: {
       { en: "Solar storage", hi: "सोलर स्टोरेज" },
       { en: "Dealer supply", hi: "डीलर सप्लाई" },
     ],
-    image: "ev-battery-handover",
+    image: "okaya-handover",
   },
 ];
 
@@ -305,6 +305,20 @@ export const solarGallery: { id: string; town: L }[] = [
   { id: "solar-kashipur-6", town: { en: "Kashipur", hi: "काशीपुर" } },
   { id: "solar-lalkuan-2", town: { en: "Lalkuan", hi: "लालकुआँ" } },
   { id: "solar-structure", town: { en: "Structure work", hi: "स्ट्रक्चर का काम" } },
+  { id: "n-solar-1", town: { en: "Rooftop solar", hi: "रूफटॉप सोलर" } },
+  { id: "n-solar-2", town: { en: "Rooftop solar", hi: "रूफटॉप सोलर" } },
+  { id: "n-solar-3", town: { en: "Rooftop solar", hi: "रूफटॉप सोलर" } },
+  { id: "n-solar-4", town: { en: "Rooftop solar", hi: "रूफटॉप सोलर" } },
+  { id: "n-solar-5", town: { en: "Rudrapur", hi: "रुद्रपुर" } },
+  { id: "n-solar-6", town: { en: "Phool Chaur", hi: "फूल चौड़" } },
+  { id: "n-solar-7", town: { en: "Lalkuan", hi: "लालकुआँ" } },
+  { id: "n-solar-8", town: { en: "Rooftop solar", hi: "रूफटॉप सोलर" } },
+  { id: "n-solar-9", town: { en: "Rudrapur", hi: "रुद्रपुर" } },
+  { id: "n-solar-10", town: { en: "Bhoor Gauri", hi: "भूर गौरी" } },
+  { id: "n-solar-11", town: { en: "Haldwani", hi: "हल्द्वानी" } },
+  { id: "n-solar-12", town: { en: "Tanda Range", hi: "टांडा रेंज" } },
+  { id: "n-solar-13", town: { en: "Kashipur", hi: "काशीपुर" } },
+  { id: "n-solar-14", town: { en: "Lalkuan", hi: "लालकुआँ" } },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -485,4 +499,38 @@ export const moments: { id: string; caption: L }[] = [
   { id: "moment-office-team", caption: { en: "PM Surya Ghar office, Haldwani", hi: "पीएम सूर्य घर ऑफ़िस, हल्द्वानी" } },
   { id: "moment-team-trip", caption: { en: "Team on the road", hi: "सफ़र पर टीम" } },
   { id: "moment-inauguration", caption: { en: "Where it began", hi: "जहाँ से शुरुआत हुई" } },
+  { id: "n-award-reda", caption: { en: "REDA RenewX 2026 award", hi: "REDA रिन्यूएक्स 2026 पुरस्कार" } },
+  { id: "n-award-archex", caption: { en: "Uttarakhand ARCH EX recognition", hi: "उत्तराखंड ARCH EX सम्मान" } },
+  { id: "n-luno-100", caption: { en: "LUNO 100 celebration", hi: "लूनो 100 उत्सव" } },
+  { id: "n-dealer-meet", caption: { en: "Rajhans dealer meet", hi: "राजहंस डीलर मीट" } },
+  { id: "n-kashipur-opening", caption: { en: "Kashipur Solar House opening", hi: "काशीपुर सोलर हाउस उद्घाटन" } },
+  { id: "n-solastice", caption: { en: "Solastice at Haldwani Solar House", hi: "हल्द्वानी सोलर हाउस पर सोलास्टिस" } },
+  { id: "n-scooty-1", caption: { en: "New e-scooty delivery", hi: "नई ई-स्कूटी डिलीवरी" } },
+  { id: "n-ev-2", caption: { en: "Happy e-rickshaw owner", hi: "ख़ुश ई-रिक्शा मालिक" } },
+  { id: "n-car-1", caption: { en: "Celebrating a milestone", hi: "एक मुकाम का जश्न" } },
 ];
+
+/* ------------------------------------------------------------------ */
+/*  Achievements / "by the numbers" (home + solar impact strip)        */
+/* ------------------------------------------------------------------ */
+export const achievements = {
+  eyebrow: { en: "By the numbers", hi: "आँकड़ों में" },
+  title: { en: "Market No. 1, with zero complaints", hi: "ज़ीरो शिकायत के साथ मार्केट में नंबर 1" },
+  body: {
+    en: "Serving Uttarakhand and Uttar Pradesh across solar, e-rickshaw and e-scooty — built on trust and genuine after-sales service.",
+    hi: "उत्तराखंड और उत्तर प्रदेश में सोलर, ई-रिक्शा और ई-स्कूटी की सेवा — भरोसे और असली आफ्टर-सेल्स सर्विस पर बनी।",
+  },
+  stats: [
+    { value: 10000, suffix: "+", icon: "scooty", label: { en: "E-scooty sold", hi: "ई-स्कूटी बिक्री" } },
+    { value: 3000, suffix: "+", icon: "rickshaw", label: { en: "E-rickshaws sold", hi: "ई-रिक्शा बिक्री" } },
+    { value: 3000, suffix: "+", icon: "doc", label: { en: "PM Surya Ghar applications submitted", hi: "पीएम सूर्य घर आवेदन जमा" } },
+    { value: 1000, suffix: "+", icon: "offgrid", label: { en: "Off-grid plants installed", hi: "ऑफ़-ग्रिड प्लांट लगाए" } },
+    { value: 500, suffix: "+", icon: "hybrid", label: { en: "Hybrid plants installed", hi: "हाइब्रिड प्लांट लगाए" } },
+    { value: 100, suffix: "+", icon: "team", label: { en: "Staff members", hi: "स्टाफ सदस्य" } },
+  ] as { value: number; suffix: string; icon: string; label: L }[],
+  badges: [
+    { en: "Zero-complaint service", hi: "ज़ीरो-शिकायत सर्विस" },
+    { en: "No. 1 in the market", hi: "मार्केट में नंबर 1" },
+    { en: "Uttarakhand & Uttar Pradesh", hi: "उत्तराखंड और उत्तर प्रदेश" },
+  ] as L[],
+};

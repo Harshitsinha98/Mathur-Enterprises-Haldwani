@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Img } from "../components/Img";
 import { Certifications } from "../components/Certifications";
 import { Faq } from "../components/Faq";
+import { Achievements } from "../components/Achievements";
 import { Hero } from "../components/Hero";
 import { StoryTeaser } from "../components/StoryTeaser";
 import { Counter, Reveal, SectionHeading, SpotlightCard } from "../components/motion";
@@ -22,7 +23,7 @@ function StatsStrip() {
           {home.stats.map((s, i) => (
             <div key={s.label.en} className={cn("relative px-4 py-6 text-center", i % 2 === 1 && "border-l border-white/10", i > 1 && "border-t border-white/10 sm:border-t-0", i === 2 && "sm:border-l")}>
               <div className="font-display text-3xl font-bold text-white sm:text-4xl">
-                <Counter to={s.value} suffix={s.suffix} plain={s.plain} />
+                <Counter to={s.value} suffix={s.suffix} plain={("plain" in s ? (s as { plain?: boolean }).plain : false)} />
               </div>
               <div className="mt-1 text-xs text-white/55 sm:text-sm">{t(s.label)}</div>
             </div>
@@ -239,6 +240,7 @@ export default function Home() {
       <Hero />
       <BrandMarquee />
       <StatsStrip />
+      <Achievements />
       <section className="container-x py-24 sm:py-32">
         <SectionHeading eyebrow={t(home.verticalsEyebrow)} title={t(home.verticalsTitle)} />
         <div className="mt-14">
