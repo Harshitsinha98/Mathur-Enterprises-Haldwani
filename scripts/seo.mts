@@ -9,7 +9,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { branches, brand, home, installations, okaya, rajhans, solar, team, verticals } from "../src/data/content.ts";
+import { branches, brand, galleryPage, home, installations, moments, okaya, rajhans, solar, solarGallery, team, verticals } from "../src/data/content.ts";
 import { business } from "../src/data/business.ts";
 import { faqs } from "../src/data/faq.ts";
 import { routeMeta } from "../src/data/seo.ts";
@@ -109,6 +109,8 @@ ${verticals.map((v) => `<h2><a href="${v.path}">${esc(v.name.en)}</a></h2><p>${e
 ${story.chapters.map((c) => `<h2>${esc(c.year)}: ${esc(c.title.en)}</h2><p>${esc(c.body.en)}${c.highlight ? " " + esc(c.highlight.en) : ""}</p>`).join("")}
 <h2>${esc(story.letterTitle.en)}</h2>${story.letter.map((p) => `<p>${esc(p.en)}</p>`).join("")}<p>${esc(story.belief.en)}</p><p>${esc(story.ahead.en)}</p>
 <p>${esc(story.signoff.en)} — ${esc(story.signByline.en)}, ${esc(story.signByRole.en)}.</p><p>${esc(story.motto.en)}</p>`,
+  "/gallery": `<h1>Gallery: solar installations, deliveries & events</h1><p>${esc(galleryPage.sub.en)}</p>
+${moments.map((m) => `<p>${esc(m.caption.en)}</p>`).join("")}${solarGallery.map((g) => `<p>Solar installation: ${esc(g.town.en)}</p>`).join("")}`,
   "/team": `<h1>Team of Mathur Enterprises</h1>${team.map((tier) => `<h2>${esc(tier.title.en)}</h2>${li(tier.members.map((m) => `${m.name}, ${m.role.en}`))}`).join("")}`,
   "/contact": `<h1>Contact Mathur Enterprises, Haldwani</h1>${contactBlock}<h2>Branches</h2>${li(branches.map((b) => `${b.name.en}: ${b.area.en}`))}`,
   "/privacy": `<h1>Privacy Policy</h1><p>${esc(routeMeta["/privacy"].description)}</p>`,
