@@ -8,7 +8,7 @@ import { Hero } from "../components/Hero";
 import { StoryTeaser } from "../components/StoryTeaser";
 import { Counter, Reveal, SectionHeading, SpotlightCard } from "../components/motion";
 import { BrandMarquee, CtaBand, ExploreLink, GhostButton, HorizontalScroller, PrimaryButton, TeamCard, VerticalCards } from "../components/sections";
-import { awards, branches, brand, home, installations, moments, team, ui } from "../data/content";
+import { awards, branches, brand, galleryPage, home, installations, moments, team, ui } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { cn, waLink } from "../lib/utils";
 
@@ -250,10 +250,13 @@ export default function Home() {
       <WhyBento />
       <SolarSpotlight />
       <section className="pt-16">
-        <div className="container-x">
-          <SectionHeading eyebrow={t(home.journeyEyebrow)} title={t(home.journeyTitle)} />
+        <div className="container-x flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <SectionHeading align="left" eyebrow={t(home.journeyEyebrow)} title={t(home.journeyTitle)} />
+          <Reveal>
+            <ExploreLink to="/gallery">{t(galleryPage.viewFull)}</ExploreLink>
+          </Reveal>
         </div>
-        <HorizontalScroller items={moments.map((m) => ({ id: m.id, caption: t(m.caption) }))} />
+        <HorizontalScroller items={moments.slice(0, 8).map((m) => ({ id: m.id, caption: t(m.caption) }))} />
       </section>
       <Awards />
       <Identity />

@@ -30,6 +30,12 @@ export const routeMeta: Record<string, { title: string; description: string; pri
       "The journey of Mathur Enterprises: a cycle shop in Lalkuan in 2005, e-rickshaws from 2016, Mathur Enterprises in 2018, electronics in Haldwani in 2019 and rooftop solar under PM Surya Ghar from 2024.",
     priority: 0.7,
   },
+  "/gallery": {
+    title: "Gallery: Solar Installations, Deliveries & Events | Mathur Enterprises, Haldwani",
+    description:
+      "Photo gallery of Mathur Enterprises: rooftop solar installations across Uttarakhand & UP, e-rickshaw and e-scooty deliveries, awards (REDA RenewX 2026), dealer meets and branch openings.",
+    priority: 0.6,
+  },
   "/team": {
     title: "Our Team | Mathur Enterprises, Haldwani",
     description: "Meet Director Aakash Mathur, CEO Kapil Mathur and the sales, solar installation, service and accounts team of Mathur Enterprises across Uttarakhand and UP.",

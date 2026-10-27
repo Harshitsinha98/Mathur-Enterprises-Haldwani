@@ -10,6 +10,7 @@ export const ui = {
     rajhans: { en: "Rajhans EV", hi: "राजहंस EV" },
     okaya: { en: "Okaya", hi: "ओकाया" },
     story: { en: "Our Story", hi: "हमारी कहानी" },
+    gallery: { en: "Gallery", hi: "गैलरी" },
     team: { en: "Team", hi: "टीम" },
     contact: { en: "Contact", hi: "संपर्क" },
   },
@@ -533,4 +534,22 @@ export const achievements = {
     { en: "No. 1 in the market", hi: "मार्केट में नंबर 1" },
     { en: "Uttarakhand & Uttar Pradesh", hi: "उत्तराखंड और उत्तर प्रदेश" },
   ] as L[],
+};
+
+/* ------------------------------------------------------------------ */
+/*  Gallery page                                                       */
+/* ------------------------------------------------------------------ */
+export const galleryPage = {
+  eyebrow: { en: "Gallery", hi: "गैलरी" },
+  title: { en: "Moments, milestones & rooftops", hi: "यादगार पल, मुकाम और छतें" },
+  sub: {
+    en: "Openings, deliveries, awards and real solar installations across Uttarakhand & Uttar Pradesh.",
+    hi: "उत्तराखंड और उत्तर प्रदेश में उद्घाटन, डिलीवरी, पुरस्कार और असली सोलर इंस्टॉलेशन।",
+  },
+  filters: {
+    all: { en: "All", hi: "सभी" },
+    moments: { en: "Moments & events", hi: "पल और इवेंट" },
+    solar: { en: "Solar installations", hi: "सोलर इंस्टॉलेशन" },
+  },
+  viewFull: { en: "View full gallery", hi: "पूरी गैलरी देखें" },
 };
