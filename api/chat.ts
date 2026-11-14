@@ -27,7 +27,8 @@ Exact branch addresses other than HQ and showroom timings are NOT known: ask the
  - Process: free site survey → PM Surya Ghar portal registration → installation by in-house team (panels, structure, inverter, earthing) → DISCOM inspection & net-metering → subsidy credited to the customer's bank account.
  - PM Surya Ghar Muft Bijli Yojana TOTAL subsidy (central + Uttarakhand state) is up to ₹85,800 for 3 kW and above. Estimate: ₹33,000 per kW up to 2 kW, ₹19,800 for the 3rd kW (1 kW ≈ ₹33,000, 2 kW ≈ ₹66,000, 3 kW+ = ₹85,800). Always say the advisor confirms the exact amount.
  - Sizing rule of thumb here: 1 kW ≈ 120 units per month. Recommended kW ≈ monthly units ÷ 120 (round to 0.5, between 1 and 10).
- - Brands seen in our work: Luno, Waaree, Solastice, Havells, Usha, Okaya.
+ - Solar panel partners (see /partners page): Tata, Waaree, Avaada, Okaya, Usha Shriram, Luno, Saatvik, Luminous. Also work with Solastice and Havells. Authorised distributor of Okaya Solar products (certificate valid till 31 Dec 2026).
+ - Team attended Bharat RE Summit & Expo 2026 (with Govt. of India and the International Solar Alliance).
  - Installations in Haldwani, Kashipur, Rudrapur, Lalkuan, Halduchaur, Bazpur, Tanda Range, Haripur Shivdatt, Jagatpura, Jangi Bangar, Bera Pokhra, Bhoor Gauri, and in UP: Bareilly, Damkhoda, Neoria Husainpur.
  - Awareness camps for PM Surya Ghar in Halduchaur and Lalkuan.
 
@@ -42,7 +43,7 @@ Exact branch addresses other than HQ and showroom timings are NOT known: ask the
 
 TEAM (public): Aakash Mathur (Director), Kapil Mathur (CEO), Sunil Kumar Diwakar (Sales Manager UK & UP), Dharmveer Singh Mourya (Head of Sales, E-Rickshaw & E-Scooty), Rohit Sharma (Service Head), Ankit Diwakar (Solar Plant Installation Head), Bagwati Chouhan (Manager, Haldwani), Ravi Sharma (Manager, Kashipur Solar House), Darwara Singh (Branch Manager, Kashipur), Anuj Sharma (Branch Manager, Lalkuan Solar House), Amit Diwakar (Branch Manager, Pantnagar), Sanjay Choudhary (Branch Manager, Halduchaur), Lakhan Singh Bisht (Sales Manager, Dist. Nainital), solar advisors Naitik Gurung (Haldwani), Rahul Goswami (Haldwani), Shashi Kohli (Dist. Nainital), Vivek Kumar (Kashipur), Rishabh Bhatnagar (Bareilly), service engineers Parmod Kumar and Anirudh Tripathi, accountant: Prakash Chandra Melkani.
 
-RECOGNITION: REDA RenewX 2026 (Renewable Energy Development Association, Uttarakhand), Uttarakhand 2047 conference, Havells Certificate of Appreciation, LUNO Solarpreneur.
+RECOGNITION: REDA RenewX 2026 (Renewable Energy Development Association, Uttarakhand), Uttarakhand 2047 conference, Havells Certificate of Appreciation, LUNO Solarpreneur, RAJHANSev Dealer Meet award (2026), Solastice Certificate of Appreciation (Partners Meet, 7 Feb 2026).
 `.trim();
 
 const SYSTEM = `You are "Mathur Mitra", the friendly AI assistant on the website of Mathur Enterprises (Haldwani).

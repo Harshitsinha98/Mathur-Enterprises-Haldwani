@@ -172,9 +172,16 @@ function Chapter({ c, i, onActive }: { c: (typeof story.chapters)[number]; i: nu
 
       {c.image && (
         <Reveal y={60} delay={0.1} className={cn(right ? "md:col-start-1 md:row-start-1" : "")}>
-          <div className="group overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
-            <Img id={c.image} alt={t(c.title)} sizes="(max-width: 768px) 90vw, 40vw" className="aspect-[4/3] w-full object-cover transition-transform duration-[1.4s] group-hover:scale-105" />
-          </div>
+          <figure className="group overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
+            <Img
+              id={c.image}
+              alt={c.imageCaption ? t(c.imageCaption) : t(c.title)}
+              sizes="(max-width: 768px) 90vw, 40vw"
+              style={c.imagePos ? { objectPosition: c.imagePos } : undefined}
+              className="aspect-[4/3] w-full object-cover transition-transform duration-[1.4s] group-hover:scale-105"
+            />
+            {c.imageCaption && <figcaption className="bg-white/[0.04] px-4 py-3 text-center text-xs text-white/60">{t(c.imageCaption)}</figcaption>}
+          </figure>
         </Reveal>
       )}
     </motion.li>

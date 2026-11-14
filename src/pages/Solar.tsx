@@ -7,7 +7,7 @@ import { Reveal, SectionHeading, SpotlightCard } from "../components/motion";
 import { CtaBand, GhostButton, PageHero, PrimaryButton } from "../components/sections";
 import { SubsidyCalculator } from "../components/SubsidyCalculator";
 import { WhatsAppIcon } from "../components/Chrome";
-import { solar, solarGallery, ui } from "../data/content";
+import { bresEvent, solar, solarGallery, ui } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { telLink, waLink } from "../lib/utils";
 
@@ -101,6 +101,13 @@ export default function Solar() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="container-x py-24 sm:py-32">
+        <SectionHeading eyebrow={t(bresEvent.eyebrow)} title={t(bresEvent.title)} body={t(bresEvent.body)} />
+        <div className="mt-14">
+          <Gallery items={bresEvent.photos.map((p) => ({ id: p.id, caption: t(p.caption) }))} />
         </div>
       </section>
 

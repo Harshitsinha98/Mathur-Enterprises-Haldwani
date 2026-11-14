@@ -11,6 +11,7 @@ export const ui = {
     okaya: { en: "Okaya", hi: "ओकाया" },
     story: { en: "Our Story", hi: "हमारी कहानी" },
     gallery: { en: "Gallery", hi: "गैलरी" },
+    partners: { en: "Partners", hi: "पार्टनर्स" },
     team: { en: "Team", hi: "टीम" },
     contact: { en: "Contact", hi: "संपर्क" },
   },
@@ -217,6 +218,49 @@ export const verticals: {
 export const partnerBrands = ["RAJHANSev", "OKAYA", "LUNO", "WAAREE", "SOLASTICE", "HAVELLS", "USHA", "PM SURYA GHAR"];
 
 /* ------------------------------------------------------------------ */
+/*  Partners page (solar panel brands)                                 */
+/* ------------------------------------------------------------------ */
+export const partnersPage = {
+  eyebrow: { en: "Our partners", hi: "हमारे पार्टनर्स" },
+  title: { en: "Solar panels from India's most trusted brands", hi: "भारत के सबसे भरोसेमंद ब्रांड्स के सोलर पैनल" },
+  sub: {
+    en: "We install solar panels from leading brands, so you can choose the panel that fits your roof and budget. Every system comes with genuine products and brand warranty.",
+    hi: "हम प्रमुख ब्रांड्स के सोलर पैनल लगाते हैं, ताकि आप अपनी छत और बजट के हिसाब से सही पैनल चुन सकें। हर सिस्टम में असली उत्पाद और ब्रांड वारंटी।",
+  },
+  panelsEyebrow: { en: "Solar panel partners", hi: "सोलर पैनल पार्टनर्स" },
+  panelsTitle: { en: "Pick your panel brand", hi: "अपना पैनल ब्रांड चुनें" },
+  panelTag: { en: "Solar panels", hi: "सोलर पैनल" },
+  ask: { en: "Ask for a quote", hi: "कोटेशन लें" },
+  certsEyebrow: { en: "Recognised by our partners", hi: "पार्टनर्स द्वारा सम्मान" },
+  certsTitle: { en: "Certificates from our partner brands", hi: "पार्टनर ब्रांड्स से मिले प्रमाणपत्र" },
+};
+
+/** Solar panel brands we work with (shown on /partners). */
+export const solarPanelPartners: { name: string; nameHi: string }[] = [
+  { name: "Tata", nameHi: "टाटा" },
+  { name: "Waaree", nameHi: "वारी" },
+  { name: "Avaada", nameHi: "अवाडा" },
+  { name: "Okaya", nameHi: "ओकाया" },
+  { name: "Usha Shriram", nameHi: "उषा श्रीराम" },
+  { name: "Luno", nameHi: "लूनो" },
+  { name: "Saatvik", nameHi: "सात्विक" },
+  { name: "Luminous", nameHi: "ल्यूमिनस" },
+];
+
+export const partnerCertificates: { id: string; title: L; body: L }[] = [
+  {
+    id: "cert-okaya-solar",
+    title: { en: "Okaya Solar: Authorised Distributor", hi: "ओकाया सोलर: अधिकृत डिस्ट्रीब्यूटर" },
+    body: { en: "Authorised distributor of Okaya Solar products, Haldwani. Valid till 31 Dec 2026.", hi: "ओकाया सोलर उत्पादों के अधिकृत डिस्ट्रीब्यूटर, हल्द्वानी। 31 दिसंबर 2026 तक मान्य।" },
+  },
+  {
+    id: "cert-solastice",
+    title: { en: "Solastice: Certificate of Appreciation", hi: "सोलास्टिस: प्रशंसा प्रमाणपत्र" },
+    body: { en: "Partners Meet hosted by Solastice Renewables with Invergy and Saatvik, 7 February 2026.", hi: "सोलास्टिस रिन्यूएबल्स की पार्टनर्स मीट, इनवर्जी और सात्विक के साथ, 7 फ़रवरी 2026।" },
+  },
+];
+
+/* ------------------------------------------------------------------ */
 /*  Solar page                                                         */
 /* ------------------------------------------------------------------ */
 export const solar = {
@@ -364,6 +408,26 @@ export const rajhans = {
     hi: "छात्रों, नौकरीपेशा और परिवारों के लिए स्टाइलिश, किफ़ायती इलेक्ट्रिक स्कूटर। टेस्ट राइड के लिए दहरिया शोरूम आएँ।",
   },
   deliveriesTitle: { en: "Happy deliveries", hi: "ख़ुशियों की डिलीवरी" },
+  /** Note on a fellow e-rickshaw business. Hindi is the original text; English is a translation for the toggle. */
+  altier: {
+    eyebrow: { en: "Industry friends", hi: "उद्योग के साथी" },
+    title: { en: "Altier Electric Vehicle Private Limited", hi: "Altier Electric Vehicle Private Limited" },
+    photoAlt: { en: "Meeting with Altier Electric Vehicle", hi: "Altier Electric Vehicle के साथ मुलाक़ात" },
+    paragraphs: [
+      {
+        en: "Another important name in the e-rickshaw journey is Altier Electric Vehicle Private Limited. Its respected owners, Shri Eklavya Gogia ji and Shri Ekansh Gogia ji, joining the e-rickshaw business and making a new start in this field is a commendable step in itself.",
+        hi: "ई-रिक्शा कारोबार के सफर में एक और महत्वपूर्ण नाम है Altier Electric Vehicle Private Limited। इसके सम्मानित ओनर श्री एकलव्य गोगिया जी एवं श्री एकांश गोगिया जी का ई-रिक्शा कारोबार से जुड़ना और इस क्षेत्र में नई शुरुआत करना अपने आप में एक सराहनीय कदम है।",
+      },
+      {
+        en: "Starting a new business is not only about starting trade. It gives birth to a new opportunity, new thinking and new possibilities for the future. The contribution of every such entrepreneur matters in taking the e-rickshaw industry forward.",
+        hi: "किसी भी नए व्यवसाय की शुरुआत करना केवल व्यापार शुरू करना नहीं, बल्कि एक नए अवसर, नई सोच और भविष्य की संभावनाओं को जन्म देना है। ऐसे सभी उद्यमियों का योगदान ई-रिक्शा उद्योग को आगे बढ़ाने में महत्वपूर्ण है।",
+      },
+      {
+        en: "I believe that along with competition, this industry also needs mutual cooperation and respect for each other's success.",
+        hi: "मेरा मानना है कि इस उद्योग में प्रतिस्पर्धा के साथ-साथ आपसी सहयोग और एक-दूसरे की सफलता का सम्मान भी जरूरी है।",
+      },
+    ] as L[],
+  },
 };
 
 /* ------------------------------------------------------------------ */
@@ -483,6 +547,8 @@ export const branches: { name: L; area: L; tags: VerticalKey[]; hq?: boolean; im
 /*  Awards & moments                                                   */
 /* ------------------------------------------------------------------ */
 export const awards: { id: string; title: L; body: L; year: string }[] = [
+  { id: "award-rajhans-dealer-meet", year: "2026", title: { en: "RAJHANSev Dealer Meet", hi: "RAJHANSev डीलर मीट" }, body: { en: "Honoured on stage at the RAJHANSev dealer meet.", hi: "RAJHANSev डीलर मीट में मंच पर सम्मानित।" } },
+  { id: "cert-solastice", year: "2026", title: { en: "Solastice Appreciation", hi: "सोलास्टिस सम्मान" }, body: { en: "Certificate of Appreciation at the Solastice Partners Meet.", hi: "सोलास्टिस पार्टनर्स मीट में प्रशंसा प्रमाणपत्र।" } },
   { id: "award-reda", year: "2026", title: { en: "REDA RenewX 2026", hi: "REDA रिन्यूएक्स 2026" }, body: { en: "Honoured by the Renewable Energy Development Association, Uttarakhand.", hi: "रिन्यूएबल एनर्जी डेवलपमेंट एसोसिएशन, उत्तराखंड द्वारा सम्मानित।" } },
   { id: "award-uk2047", year: "2026", title: { en: "Uttarakhand 2047 Conference", hi: "उत्तराखंड 2047 सम्मेलन" }, body: { en: "Recognised for contribution to clean energy in the state.", hi: "राज्य में स्वच्छ ऊर्जा में योगदान के लिए सम्मान।" } },
   { id: "award-havells", year: "2025", title: { en: "Havells Appreciation", hi: "हैवेल्स सम्मान" }, body: { en: "Certificate of Appreciation for outstanding partnership.", hi: "उत्कृष्ट साझेदारी के लिए प्रशंसा प्रमाणपत्र।" } },
@@ -509,7 +575,36 @@ export const moments: { id: string; caption: L }[] = [
   { id: "n-scooty-1", caption: { en: "New e-scooty delivery", hi: "नई ई-स्कूटी डिलीवरी" } },
   { id: "n-ev-2", caption: { en: "Happy e-rickshaw owner", hi: "ख़ुश ई-रिक्शा मालिक" } },
   { id: "n-car-1", caption: { en: "Celebrating a milestone", hi: "एक मुकाम का जश्न" } },
+  { id: "award-rajhans-dealer-meet", caption: { en: "Award at the RAJHANSev dealer meet", hi: "RAJHANSev डीलर मीट में सम्मान" } },
+  { id: "altier-meet", caption: { en: "With friends from the e-rickshaw industry", hi: "ई-रिक्शा उद्योग के साथियों के साथ" } },
 ];
+
+/** Bharat RE Summit & Expo 2026 (shown on /solar and in the gallery). */
+export const bresEvent = {
+  eyebrow: { en: "Bharat RE Summit & Expo 2026", hi: "भारत RE समिट और एक्सपो 2026" },
+  title: { en: "At India's renewable energy summit", hi: "भारत के रिन्यूएबल एनर्जी समिट में" },
+  body: {
+    en: "Our team attended Bharat RE Summit & Expo 2026, organised with the Government of India and the International Solar Alliance (ISA), to learn about the latest in solar and clean energy and bring it back to our customers.",
+    hi: "हमारी टीम ने भारत सरकार और इंटरनेशनल सोलर अलायंस (ISA) के साथ आयोजित भारत RE समिट और एक्सपो 2026 में भाग लिया, ताकि सोलर और स्वच्छ ऊर्जा की नई जानकारी अपने ग्राहकों तक पहुँचा सकें।",
+  },
+  photos: [
+    { id: "bres-team", caption: { en: "Team Mathur at Bharat RE Summit 2026", hi: "भारत RE समिट 2026 में माथुर टीम" } },
+    { id: "bres-stage", caption: { en: "At the summit stage", hi: "समिट मंच पर" } },
+    { id: "bres-hashtag", caption: { en: "#BRES2026", hi: "#BRES2026" } },
+    { id: "bres-hall-1", caption: { en: "Attending the summit sessions", hi: "समिट सत्रों में" } },
+    { id: "bres-flags-1", caption: { en: "Flags of participating nations", hi: "भाग लेने वाले देशों के झंडे" } },
+    { id: "bres-pavilion-1", caption: { en: "Discussions at the pavilion", hi: "पवेलियन में चर्चा" } },
+    { id: "bres-hall-2", caption: { en: "In the main hall", hi: "मुख्य हॉल में" } },
+    { id: "bres-venue-1", caption: { en: "At the summit venue", hi: "समिट स्थल पर" } },
+    { id: "bres-flags-2", caption: { en: "Outside the expo", hi: "एक्सपो के बाहर" } },
+    { id: "bres-pavilion-2", caption: { en: "At the exhibition pavilion", hi: "प्रदर्शनी पवेलियन में" } },
+    { id: "bres-hall-3", caption: { en: "A packed summit hall", hi: "भरा हुआ समिट हॉल" } },
+    { id: "bres-venue-2", caption: { en: "At the summit venue", hi: "समिट स्थल पर" } },
+    { id: "bres-venue-3", caption: { en: "At the summit venue", hi: "समिट स्थल पर" } },
+    { id: "bres-delegates-1", caption: { en: "In the delegates' hall", hi: "प्रतिनिधि हॉल में" } },
+    { id: "bres-delegates-2", caption: { en: "In the delegates' hall", hi: "प्रतिनिधि हॉल में" } },
+  ] as { id: string; caption: L }[],
+};
 
 /* ------------------------------------------------------------------ */
 /*  Achievements / "by the numbers" (home + solar impact strip)        */

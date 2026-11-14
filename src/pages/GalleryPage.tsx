@@ -4,7 +4,7 @@ import { Gallery } from "../components/Gallery";
 import { CtaBand } from "../components/sections";
 import { WordReveal } from "../components/motion";
 import { Particles } from "../components/Particles";
-import { galleryPage, moments, solarGallery } from "../data/content";
+import { bresEvent, galleryPage, moments, solarGallery } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { cn } from "../lib/utils";
 
@@ -14,7 +14,10 @@ export default function GalleryPage() {
   const { t } = useLang();
   const [filter, setFilter] = useState<Filter>("all");
 
-  const momentItems = useMemo(() => moments.map((m) => ({ id: m.id, caption: t(m.caption), kind: "moments" as const })), [t]);
+  const momentItems = useMemo(
+    () => [...moments, ...bresEvent.photos].map((m) => ({ id: m.id, caption: t(m.caption), kind: "moments" as const })),
+    [t],
+  );
   const solarItems = useMemo(() => solarGallery.map((g) => ({ id: g.id, caption: t(g.town), kind: "solar" as const })), [t]);
 
   const items = useMemo(() => {

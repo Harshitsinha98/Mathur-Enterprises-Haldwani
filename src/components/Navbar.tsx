@@ -17,6 +17,7 @@ const links = [
   { to: "/okaya", label: ui.nav.okaya },
   { to: "/story", label: ui.nav.story },
   { to: "/gallery", label: ui.nav.gallery },
+  { to: "/partners", label: ui.nav.partners },
   { to: "/team", label: ui.nav.team },
   { to: "/contact", label: ui.nav.contact },
 ];
@@ -96,7 +97,7 @@ export function Navbar() {
         <ul className="hidden items-center gap-1 lg:flex">
           {links.map((l) => (
             <li key={l.to}>
-              <NavLink to={l.to} end={l.to === "/"} className="relative block px-3.5 py-2 text-sm font-medium">
+              <NavLink to={l.to} end={l.to === "/"} className="relative block px-2.5 py-2 text-sm font-medium xl:px-3.5">
                 {({ isActive }) => (
                   <>
                     {isActive && (

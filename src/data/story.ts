@@ -51,6 +51,13 @@ export const story = {
     {
       year: "2016",
       icon: "zap",
+      /** Goenka Electric "Best Performer of Year 2017" trophy, awarded to M/s Choudhary Enterprises, Haldwani. */
+      image: "story-goenka-2017",
+      imagePos: "50% 85%",
+      imageCaption: {
+        en: "Goenka Electric \"Best Performer of Year 2017\": M/s Choudhary Enterprises, Haldwani",
+        hi: "गोयनका इलेक्ट्रिक \"बेस्ट परफ़ॉर्मर ऑफ़ ईयर 2017\": मेसर्स चौधरी एंटरप्राइजेज़, हल्द्वानी",
+      },
       title: { en: "Into e-rickshaws", hi: "ई-रिक्शा व्यवसाय की शुरुआत" },
       body: {
         en: "In 2016 I started working in e-rickshaws with Choudhary Enterprises. It was a turning point. I worked hard and slowly built my experience and contacts.",
@@ -111,7 +118,7 @@ export const story = {
         hi: "वर्ष 2024 में हमने सोलर के क्षेत्र में कदम रखा। प्रधानमंत्री सूर्य घर: मुफ्त बिजली योजना के माध्यम से लोगों तक सोलर ऊर्जा का लाभ पहुँचाने का संकल्प लिया। आज इस क्षेत्र में उत्तराखंड में नंबर 1 की पहचान बनाने तक का जो सफर तय हुआ है, वह हमारे लिए गर्व की बात है। यह उपलब्धि केवल मेरी नहीं, बल्कि हमारी पूरी टीम, हमारे सहयोगियों, ग्राहकों और उन सभी लोगों की है जिन्होंने हम पर भरोसा किया।",
       },
     },
-  ] as { year: string; icon: StoryIcon; image?: string; storm?: boolean; title: L; body: L; highlight?: L }[],
+  ] as { year: string; icon: StoryIcon; image?: string; imagePos?: string; imageCaption?: L; storm?: boolean; title: L; body: L; highlight?: L }[],
 
   letterTitle: { en: "Our biggest asset: your trust", hi: "हमारी सबसे बड़ी पूँजी — आप सभी का विश्वास" },
   letter: [
