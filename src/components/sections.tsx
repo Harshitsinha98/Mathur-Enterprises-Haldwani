@@ -204,10 +204,10 @@ export function Avatar({ m, className }: { m: Member; className?: string }) {
   );
 }
 
-export function TeamCard({ m, featured = false }: { m: Member; featured?: boolean }) {
+export function TeamCard({ m, featured = false, highlight = false }: { m: Member; featured?: boolean; highlight?: boolean }) {
   const { t, lang } = useLang();
   return (
-    <SpotlightCard className={cn("h-full", featured && "ring-1 ring-sun-400/40")}>
+    <SpotlightCard className={cn("h-full", (featured || highlight) && "ring-1 ring-sun-400/40")}>
       <div className={cn("relative overflow-hidden", featured ? "aspect-[4/5]" : "aspect-square")}>
         <Avatar m={m} className="transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/10 to-transparent" />

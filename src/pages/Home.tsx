@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Img } from "../components/Img";
 import { Certifications } from "../components/Certifications";
 import { Faq } from "../components/Faq";
+import { Achievements } from "../components/Achievements";
 import { Hero } from "../components/Hero";
+import { StoryTeaser } from "../components/StoryTeaser";
 import { Counter, Reveal, SectionHeading, SpotlightCard } from "../components/motion";
 import { BrandMarquee, CtaBand, ExploreLink, GhostButton, HorizontalScroller, PrimaryButton, TeamCard, VerticalCards } from "../components/sections";
-import { awards, branches, brand, home, installations, moments, team, ui } from "../data/content";
+import { awards, branches, brand, galleryPage, home, installations, moments, team, ui } from "../data/content";
 import { useLang } from "../lib/i18n";
 import { cn, waLink } from "../lib/utils";
 
@@ -21,7 +23,7 @@ function StatsStrip() {
           {home.stats.map((s, i) => (
             <div key={s.label.en} className={cn("relative px-4 py-6 text-center", i % 2 === 1 && "border-l border-white/10", i > 1 && "border-t border-white/10 sm:border-t-0", i === 2 && "sm:border-l")}>
               <div className="font-display text-3xl font-bold text-white sm:text-4xl">
-                <Counter to={s.value} suffix={s.suffix} plain={s.plain} />
+                <Counter to={s.value} suffix={s.suffix} plain={("plain" in s ? (s as { plain?: boolean }).plain : false)} />
               </div>
               <div className="mt-1 text-xs text-white/55 sm:text-sm">{t(s.label)}</div>
             </div>
@@ -141,7 +143,7 @@ function Awards() {
 
 function TeamPreview() {
   const { t } = useLang();
-  const ceo = team[0].members[0];
+  const leaders = team[0].members;
   const heads = team[1].members;
   return (
     <section className="relative py-24 sm:py-32">
@@ -152,12 +154,14 @@ function TeamPreview() {
             <ExploreLink to="/team">{t(ui.cta.viewAll)}</ExploreLink>
           </Reveal>
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          <Reveal className="sm:col-span-2 lg:col-span-1 lg:row-span-1">
-            <TeamCard m={ceo} featured />
-          </Reveal>
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-6">
+          {leaders.map((m, i) => (
+            <Reveal key={m.name} delay={0.08 * i}>
+              <TeamCard m={m} highlight />
+            </Reveal>
+          ))}
           {heads.map((m, i) => (
-            <Reveal key={m.name} delay={0.08 * (i + 1)}>
+            <Reveal key={m.name} delay={0.08 * (i + leaders.length)}>
               <TeamCard m={m} />
             </Reveal>
           ))}
@@ -184,8 +188,8 @@ function Identity() {
             title={t(brand.promise)}
             body={
               lang === "hi"
-                ? "एक छोटी सी दुकान से शुरू होकर आज माथुर एंटरप्राइजेज़ हल्द्वानी, काशीपुर, लालकुआँ, पंतनगर, हल्दूचौड़, जय नगर और किच्छा में फैला है।"
-                : "What began as a single counter in Haldwani is today a network across Haldwani, Kashipur, Lalkuan, Pantnagar, Halduchaur, Jay Nagar and Kichha."
+                ? "2005 में लालकुआँ की एक छोटी-सी साइकिल की दुकान से शुरू हुआ सफर आज हल्द्वानी, काशीपुर, लालकुआँ, पंतनगर, हल्दूचौड़, जय नगर और किच्छा तक फैला है।"
+                : "A journey that began in 2005 at a small cycle shop in Lalkuan now spans Haldwani, Kashipur, Lalkuan, Pantnagar, Halduchaur, Jay Nagar and Kichha."
             }
           />
           <Reveal delay={0.2} className="mt-8 grid grid-cols-2 gap-3">
@@ -236,6 +240,7 @@ export default function Home() {
       <Hero />
       <BrandMarquee />
       <StatsStrip />
+      <Achievements />
       <section className="container-x py-24 sm:py-32">
         <SectionHeading eyebrow={t(home.verticalsEyebrow)} title={t(home.verticalsTitle)} />
         <div className="mt-14">
@@ -245,13 +250,17 @@ export default function Home() {
       <WhyBento />
       <SolarSpotlight />
       <section className="pt-16">
-        <div className="container-x">
-          <SectionHeading eyebrow={t(home.journeyEyebrow)} title={t(home.journeyTitle)} />
+        <div className="container-x flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <SectionHeading align="left" eyebrow={t(home.journeyEyebrow)} title={t(home.journeyTitle)} />
+          <Reveal>
+            <ExploreLink to="/gallery">{t(galleryPage.viewFull)}</ExploreLink>
+          </Reveal>
         </div>
-        <HorizontalScroller items={moments.map((m) => ({ id: m.id, caption: t(m.caption) }))} />
+        <HorizontalScroller items={moments.slice(0, 8).map((m) => ({ id: m.id, caption: t(m.caption) }))} />
       </section>
       <Awards />
       <Identity />
+      <StoryTeaser />
       <TeamPreview />
       <BranchStrip />
       <Certifications />

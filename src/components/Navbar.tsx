@@ -15,6 +15,8 @@ const links = [
   { to: "/solar", label: ui.nav.solar },
   { to: "/rajhans-ev", label: ui.nav.rajhans },
   { to: "/okaya", label: ui.nav.okaya },
+  { to: "/story", label: ui.nav.story },
+  { to: "/gallery", label: ui.nav.gallery },
   { to: "/team", label: ui.nav.team },
   { to: "/contact", label: ui.nav.contact },
 ];

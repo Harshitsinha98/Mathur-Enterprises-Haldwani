@@ -13,7 +13,7 @@ export default function Okaya() {
   const { t, lang } = useLang();
   return (
     <>
-      <PageHero eyebrow={t(okaya.eyebrow)} title={t(okaya.title)} sub={t(okaya.sub)} image="store-haldwani-2" tone="okaya">
+      <PageHero eyebrow={t(okaya.eyebrow)} title={t(okaya.title)} sub={t(okaya.sub)} image="okaya-store-2" tone="okaya">
         <PrimaryButton href={waLink("Hello, I want details of Okaya inverters and batteries.")}>
           <WhatsAppIcon className="h-4 w-4" /> {t(ui.cta.enquire)}
         </PrimaryButton>
@@ -71,10 +71,10 @@ export default function Okaya() {
             </div>
             <Reveal className="grid grid-cols-2 gap-4">
               <div className="overflow-hidden rounded-3xl">
-                <Img id="ev-battery-handover" alt="Okaya battery handover" sizes="25vw" className="aspect-[3/4] w-full object-cover" />
+                <Img id="okaya-handover" alt="Okaya e-scooty and battery handover at our Okaya store" sizes="25vw" className="aspect-[3/4] w-full object-cover" />
               </div>
               <div className="mt-10 overflow-hidden rounded-3xl">
-                <Img id="store-haldwani" alt="Haldwani store with Okaya branding" sizes="25vw" className="aspect-[3/4] w-full object-cover" />
+                <Img id="okaya-store-2" alt="Okaya showroom front, Haldwani" sizes="25vw" className="aspect-[3/4] w-full object-cover" />
               </div>
             </Reveal>
           </div>
