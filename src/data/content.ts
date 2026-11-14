@@ -412,7 +412,8 @@ export const rajhans = {
   altier: {
     eyebrow: { en: "Industry friends", hi: "उद्योग के साथी" },
     title: { en: "Altier Electric Vehicle Private Limited", hi: "Altier Electric Vehicle Private Limited" },
-    photoAlt: { en: "Meeting with Altier Electric Vehicle", hi: "Altier Electric Vehicle के साथ मुलाक़ात" },
+    signature: { en: "Kapil Mathur & Aakash Mathur", hi: "कपिल माथुर और आकाश माथुर" },
+    signatureRole: { en: "Mathur Enterprises", hi: "माथुर एंटरप्राइजेज़" },
     paragraphs: [
       {
         en: "Another important name in the e-rickshaw journey is Altier Electric Vehicle Private Limited. Its respected owners, Shri Eklavya Gogia ji and Shri Ekansh Gogia ji, joining the e-rickshaw business and making a new start in this field is a commendable step in itself.",
@@ -576,7 +577,7 @@ export const moments: { id: string; caption: L }[] = [
   { id: "n-ev-2", caption: { en: "Happy e-rickshaw owner", hi: "ख़ुश ई-रिक्शा मालिक" } },
   { id: "n-car-1", caption: { en: "Celebrating a milestone", hi: "एक मुकाम का जश्न" } },
   { id: "award-rajhans-dealer-meet", caption: { en: "Award at the RAJHANSev dealer meet", hi: "RAJHANSev डीलर मीट में सम्मान" } },
-  { id: "altier-meet", caption: { en: "With friends from the e-rickshaw industry", hi: "ई-रिक्शा उद्योग के साथियों के साथ" } },
+  { id: "moment-aditya-choudhary", caption: { en: "With Shri Aditya Choudhary ji", hi: "श्री आदित्य चौधरी जी के साथ" } },
 ];
 
 /** Bharat RE Summit & Expo 2026 (shown on /solar and in the gallery). */

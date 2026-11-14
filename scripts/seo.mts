@@ -104,7 +104,7 @@ ${verticals.map((v) => `<h2><a href="${v.path}">${esc(v.name.en)}</a></h2><p>${e
 <h2>${esc(bresEvent.eyebrow.en)}</h2><p>${esc(bresEvent.body.en)}</p>${contactBlock}`,
   "/rajhans-ev": `<h1>${esc(rajhans.title.en)}</h1><p>${esc(rajhans.sub.en)}</p><h2>RAJHANSev models</h2>${li(rajhans.models.map((m) => `RAJHANSev ${m.name} (${m.kind === "cargo" ? "cargo / loader" : "passenger e-rickshaw"})`))}
 <h2>${esc(rajhans.benefitsTitle.en)}</h2>${li(rajhans.benefits.map((b) => `${b.title.en}: ${b.body.en}`))}<h2>${esc(rajhans.scootyTitle.en)}</h2><p>${esc(rajhans.scootyBody.en)}</p>
-<h2>${esc(rajhans.altier.title.en)}</h2>${rajhans.altier.paragraphs.map((p) => `<p>${esc(p.en)}</p>`).join("")}${contactBlock}`,
+<h2>${esc(rajhans.altier.title.en)}</h2>${rajhans.altier.paragraphs.map((p) => `<p>${esc(p.en)}</p>`).join("")}<p>— ${esc(rajhans.altier.signature.en)}, ${esc(rajhans.altier.signatureRole.en)}</p>${contactBlock}`,
   "/partners": `<h1>${esc(partnersPage.title.en)}</h1><p>${esc(partnersPage.sub.en)}</p><h2>Solar panel partners</h2>${li(solarPanelPartners.map((p) => `${p.name} solar panels`))}
 <h2>${esc(partnersPage.certsTitle.en)}</h2>${li(partnerCertificates.map((c) => `${c.title.en}: ${c.body.en}`))}${contactBlock}`,
   "/okaya": `<h1>${esc(okaya.title.en)}</h1><p>${esc(okaya.sub.en)}</p><h2>${esc(okaya.productsTitle.en)}</h2>${li(okaya.products.map((p) => `${p.title.en}: ${p.body.en}`))}
