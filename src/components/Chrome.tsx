@@ -56,6 +56,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link to="/story" className="text-white/70 hover:text-white">{t(ui.nav.story)}</Link></li>
             <li><Link to="/gallery" className="text-white/70 hover:text-white">{t(ui.nav.gallery)}</Link></li>
+            <li><Link to="/partners" className="text-white/70 hover:text-white">{t(ui.nav.partners)}</Link></li>
             <li><Link to="/team" className="text-white/70 hover:text-white">{t(ui.nav.team)}</Link></li>
             <li><Link to="/contact" className="text-white/70 hover:text-white">{t(ui.nav.contact)}</Link></li>
             <li><Link to="/privacy" className="text-white/70 hover:text-white">Privacy Policy</Link></li>

@@ -36,6 +36,12 @@ export const routeMeta: Record<string, { title: string; description: string; pri
       "Photo gallery of Mathur Enterprises: rooftop solar installations across Uttarakhand & UP, e-rickshaw and e-scooty deliveries, awards (REDA RenewX 2026), dealer meets and branch openings.",
     priority: 0.6,
   },
+  "/partners": {
+    title: "Solar Panel Partners: Tata, Waaree, Avaada, Okaya, Luno & more | Mathur Enterprises",
+    description:
+      "Mathur Enterprises, Haldwani installs solar panels from Tata, Waaree, Avaada, Okaya, Usha Shriram, Luno, Saatvik and Luminous. Free site survey and PM Surya Ghar subsidy support.",
+    priority: 0.7,
+  },
   "/team": {
     title: "Our Team | Mathur Enterprises, Haldwani",
     description: "Meet Director Aakash Mathur, CEO Kapil Mathur and the sales, solar installation, service and accounts team of Mathur Enterprises across Uttarakhand and UP.",

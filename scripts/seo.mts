@@ -9,7 +9,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { branches, brand, galleryPage, home, installations, moments, okaya, rajhans, solar, solarGallery, team, verticals } from "../src/data/content.ts";
+import { branches, brand, bresEvent, galleryPage, home, installations, moments, okaya, partnerCertificates, partnersPage, rajhans, solar, solarGallery, solarPanelPartners, team, verticals } from "../src/data/content.ts";
 import { business } from "../src/data/business.ts";
 import { faqs } from "../src/data/faq.ts";
 import { routeMeta } from "../src/data/seo.ts";
@@ -100,9 +100,13 @@ ${verticals.map((v) => `<h2><a href="${v.path}">${esc(v.name.en)}</a></h2><p>${e
   "/solar": `<h1>${esc(solar.title.en)}</h1><p>${esc(solar.sub.en)}</p><h2>Solar solutions</h2>${li(solar.products.map((p) => `${p.title.en}: ${p.body.en}`))}
 <h2>${esc(solar.processTitle.en)}</h2><ol>${solar.process.map((s) => `<li>${esc(`${s.title.en}: ${s.body.en}`)}</li>`).join("")}</ol>
 <h2>PM Surya Ghar subsidy</h2><p>Total subsidy (central + state) up to ₹85,800 for 3 kW and above; about ₹33,000 for 1 kW and ₹66,000 for 2 kW.</p>
-<h2>Installations</h2><p>${esc([...new Set(installations.map((i) => i.town.en))].join(", "))}.</p>${contactBlock}`,
+<h2>Installations</h2><p>${esc([...new Set(installations.map((i) => i.town.en))].join(", "))}.</p>
+<h2>${esc(bresEvent.eyebrow.en)}</h2><p>${esc(bresEvent.body.en)}</p>${contactBlock}`,
   "/rajhans-ev": `<h1>${esc(rajhans.title.en)}</h1><p>${esc(rajhans.sub.en)}</p><h2>RAJHANSev models</h2>${li(rajhans.models.map((m) => `RAJHANSev ${m.name} (${m.kind === "cargo" ? "cargo / loader" : "passenger e-rickshaw"})`))}
-<h2>${esc(rajhans.benefitsTitle.en)}</h2>${li(rajhans.benefits.map((b) => `${b.title.en}: ${b.body.en}`))}<h2>${esc(rajhans.scootyTitle.en)}</h2><p>${esc(rajhans.scootyBody.en)}</p>${contactBlock}`,
+<h2>${esc(rajhans.benefitsTitle.en)}</h2>${li(rajhans.benefits.map((b) => `${b.title.en}: ${b.body.en}`))}<h2>${esc(rajhans.scootyTitle.en)}</h2><p>${esc(rajhans.scootyBody.en)}</p>
+<h2>${esc(rajhans.altier.title.en)}</h2>${rajhans.altier.paragraphs.map((p) => `<p>${esc(p.en)}</p>`).join("")}<p>— ${esc(rajhans.altier.signature.en)}, ${esc(rajhans.altier.signatureRole.en)}</p>${contactBlock}`,
+  "/partners": `<h1>${esc(partnersPage.title.en)}</h1><p>${esc(partnersPage.sub.en)}</p><h2>Solar panel partners</h2>${li(solarPanelPartners.map((p) => `${p.name} solar panels`))}
+<h2>${esc(partnersPage.certsTitle.en)}</h2>${li(partnerCertificates.map((c) => `${c.title.en}: ${c.body.en}`))}${contactBlock}`,
   "/okaya": `<h1>${esc(okaya.title.en)}</h1><p>${esc(okaya.sub.en)}</p><h2>${esc(okaya.productsTitle.en)}</h2>${li(okaya.products.map((p) => `${p.title.en}: ${p.body.en}`))}
 <h2>${esc(okaya.dealerTitle.en)}</h2><p>${esc(okaya.dealerBody.en)}</p>${contactBlock}`,
   "/story": `<h1>${esc(story.title.en)}</h1><blockquote>${esc(story.quote.en)}</blockquote><p>${esc(story.intro.en)}</p>
@@ -110,7 +114,7 @@ ${story.chapters.map((c) => `<h2>${esc(c.year)}: ${esc(c.title.en)}</h2><p>${esc
 <h2>${esc(story.letterTitle.en)}</h2>${story.letter.map((p) => `<p>${esc(p.en)}</p>`).join("")}<p>${esc(story.belief.en)}</p><p>${esc(story.ahead.en)}</p>
 <p>${esc(story.signoff.en)} — ${esc(story.signByline.en)}, ${esc(story.signByRole.en)}.</p><p>${esc(story.motto.en)}</p>`,
   "/gallery": `<h1>Gallery: solar installations, deliveries & events</h1><p>${esc(galleryPage.sub.en)}</p>
-${moments.map((m) => `<p>${esc(m.caption.en)}</p>`).join("")}${solarGallery.map((g) => `<p>Solar installation: ${esc(g.town.en)}</p>`).join("")}`,
+${[...moments, ...bresEvent.photos].map((m) => `<p>${esc(m.caption.en)}</p>`).join("")}${solarGallery.map((g) => `<p>Solar installation: ${esc(g.town.en)}</p>`).join("")}`,
   "/team": `<h1>Team of Mathur Enterprises</h1>${team.map((tier) => `<h2>${esc(tier.title.en)}</h2>${li(tier.members.map((m) => `${m.name}, ${m.role.en}`))}`).join("")}`,
   "/contact": `<h1>Contact Mathur Enterprises, Haldwani</h1>${contactBlock}<h2>Branches</h2>${li(branches.map((b) => `${b.name.en}: ${b.area.en}`))}`,
   "/privacy": `<h1>Privacy Policy</h1><p>${esc(routeMeta["/privacy"].description)}</p>`,

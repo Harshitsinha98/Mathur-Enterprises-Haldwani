@@ -53,11 +53,19 @@ export default function RajhansEV() {
     { id: "store-ev", caption: lang === "hi" ? "ई-स्कूटी रिक्शा शोरूम" : "E-scooty & rickshaw showroom" },
     { id: "ev-expo-rickshaw", caption: lang === "hi" ? "EV एक्सपो में" : "At the EV expo" },
     { id: "ev-expo-team", caption: lang === "hi" ? "राष्ट्रीय EV एक्सपो, टीम" : "National EV expo, team" },
+    { id: "award-rajhans-dealer-meet", caption: lang === "hi" ? "RAJHANSev डीलर मीट में सम्मान" : "Award at the RAJHANSev dealer meet" },
   ];
 
   return (
     <>
-      <PageHero eyebrow={t(rajhans.eyebrow)} title={t(rajhans.title)} sub={t(rajhans.sub)} image="ev-delivery-2" tone="rajhans">
+      <PageHero
+        eyebrow={t(rajhans.eyebrow)}
+        title={t(rajhans.title)}
+        sub={t(rajhans.sub)}
+        image="ev-delivery-2"
+        tone="rajhans"
+        product={{ id: "rajhans-hero-plus", alt: "RAJHANSev Plus e-rickshaw, available with lead-acid and Li-ion battery" }}
+      >
         <PrimaryButton href={waLink("Hello, I want details of Rajhans e-rickshaw models.")}>
           <WhatsAppIcon className="h-4 w-4" /> {t(ui.cta.enquire)}
         </PrimaryButton>
@@ -141,6 +149,24 @@ export default function RajhansEV() {
             </Reveal>
           </div>
         </div>
+      </section>
+
+      <section className="container-x py-12">
+        <Reveal>
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-raj-400/20 bg-gradient-to-br from-raj-500/15 via-ink-900 to-ink-950 p-6 sm:p-10">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-raj-400">{t(rajhans.altier.eyebrow)}</span>
+            <h2 className="mt-3 font-display text-2xl font-bold sm:text-3xl">{t(rajhans.altier.title)}</h2>
+            <div className="mt-5 space-y-4 leading-relaxed text-white/70">
+              {rajhans.altier.paragraphs.map((p) => (
+                <p key={p.en}>{t(p)}</p>
+              ))}
+            </div>
+            <p className="mt-6 border-t border-white/10 pt-4 text-right">
+              <span className="block font-display font-semibold text-white">— {t(rajhans.altier.signature)}</span>
+              <span className="text-sm text-white/50">{t(rajhans.altier.signatureRole)}</span>
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <section className="container-x py-12">

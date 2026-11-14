@@ -120,7 +120,7 @@ function Awards() {
   return (
     <section className="container-x py-24 sm:py-32">
       <SectionHeading eyebrow={t(home.awardsEyebrow)} title={t(home.awardsTitle)} />
-      <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {awards.map((a, i) => (
           <Reveal key={a.id} delay={i * 0.08}>
             <SpotlightCard className="h-full">

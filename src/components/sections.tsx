@@ -23,6 +23,7 @@ export function PageHero({
   sub,
   image,
   tone = "solar",
+  product,
   children,
 }: {
   eyebrow: string;
@@ -30,6 +31,8 @@ export function PageHero({
   sub: string;
   image: string;
   tone?: VerticalKey;
+  /** Optional cut-out product shot (transparent PNG) shown beside the text. */
+  product?: { id: string; alt: string };
   children?: ReactNode;
 }) {
   const ref = useRef<HTMLElement>(null);
@@ -40,13 +43,25 @@ export function PageHero({
 
   return (
     <section ref={ref} className="noise relative isolate flex min-h-[88svh] items-end overflow-hidden pb-16 pt-36 sm:pb-24">
-      <motion.div style={{ y, scale }} className="absolute inset-0 -z-20">
+      <motion.div style={{ y, scale }} className={cn("absolute inset-0 -z-20", product && "opacity-40")}>
         <Img id={image} alt="" eager sizes="100vw" className="h-full w-full object-cover" />
       </motion.div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/75 to-ink-950/30" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950/80 to-transparent" />
       <Particles density={0.00005} />
-      <div className="container-x relative">
+      <div className={cn("container-x relative", product && "grid items-center gap-8 lg:grid-cols-[1.1fr_1fr]")}>
+        {product && (
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="relative lg:order-2"
+          >
+            <div aria-hidden className={cn("absolute inset-x-[10%] bottom-[8%] top-[20%] -z-10 rounded-full opacity-40 blur-3xl", a.bg)} />
+            <Img id={product.id} alt={product.alt} eager sizes="(max-width: 1024px) 90vw, 45vw" className="mx-auto max-h-[38svh] w-auto drop-shadow-[0_30px_40px_rgba(0,0,0,0.6)] lg:max-h-[60svh]" />
+          </motion.div>
+        )}
+        <div>
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,6 +86,7 @@ export function PageHero({
             {children}
           </motion.div>
         )}
+        </div>
       </div>
     </section>
   );
